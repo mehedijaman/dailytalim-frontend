@@ -1,5 +1,14 @@
+import Navbar from "@/components/navbar/Navbar";
+
 const MainLayout = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <main>
+      <header>
+        <Navbar />
+      </header>
+      {children}
+    </main>
+  );
 };
 
 export default MainLayout;
