@@ -5,10 +5,10 @@ import Sidebar from '@/components/sidebar/Sidebar';
 const MainLayout = ({ children }) => {
   return (
     <main>
-      <header>
+      <header className="fixed z-50 h-16 w-full bg-white">
         <Navbar />
       </header>
-      <section className="flex gap-5">
+      <section className="flex gap-5 pt-16">
         <Sidebar />
         <div className="flex-1 pl-80">{children}</div>
         <RightSidebar />
