@@ -1,7 +1,10 @@
+import Content from '@/components/content/Content';
 import React from 'react';
 
 const Root = () => {
-  return <div>Root</div>;
+  return <div>
+    <Content/>
+  </div>;
 };
 
 export default Root;
