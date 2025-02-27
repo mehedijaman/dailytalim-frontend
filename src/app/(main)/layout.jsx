@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
       </header>
       <section className="flex gap-5 pt-16">
         <Sidebar />
-        <div className="flex-1 pl-80">{children}</div>
+        <div className="flex-1 pl-72">{children}</div>
         <RightSidebar />
       </section>
     </main>
