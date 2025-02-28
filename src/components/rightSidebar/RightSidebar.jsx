@@ -25,12 +25,12 @@ const RightSidebar = () => {
 
   const hijriDate = moment().locale('en').format('iD iMMMM iYYYY');
   const [day, month, year] = hijriDate.split(' ');
-  const formattedDateInBangla = `${convertToBanglaNum(day)} ${hijriMonthsInBangla[month]}, ${convertToBanglaNum(year)}`;
+  const formattedDateInBangla = `${hijriMonthsInBangla[month]}  ${convertToBanglaNum(day)} , ${convertToBanglaNum(year)} `;
 
   return (
     <div className="h-[calc(100vh-64px)] w-72 border-l p-6">
       <div>
-        <h4 className="text-xl font-bold">{formattedDateInBangla}</h4>
+        <h4 className="text-xl font-bold">{formattedDateInBangla} হিজরী</h4>
       </div>
     </div>
   );
