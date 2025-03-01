@@ -32,9 +32,9 @@ const Navbar = ({
           alt="logo"
           width={35}
           height={10}
-          className="rounded-[5px] object-cover"
+          className="hidden rounded-[5px] object-cover md:block"
         />
-        <h1 className="text-2xl font-bold"> ডেইলি তালিম </h1>
+        <h1 className="text-xl font-bold md:text-2xl"> ডেইলি তালিম </h1>
       </div>
       <div className="flex items-center gap-2 text-dailyTalim-mutedGray">
         <ThemeControl />
