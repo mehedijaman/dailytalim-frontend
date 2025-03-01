@@ -1,14 +1,6 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '../ui/table';
+import { Table, TableBody, TableCell, TableRow } from '../ui/table';
 import { Coordinates, CalculationMethod, PrayerTimes, Madhab } from 'adhan';
+import { subMinutes, format } from 'date-fns';
 
 const coordinates = new Coordinates(22.84564, 89.540329);
 const params = CalculationMethod.MuslimWorldLeague();
@@ -16,6 +8,10 @@ params.madhab = Madhab.Hanafi;
 const date = new Date();
 const prayersTimes = new PrayerTimes(coordinates, date, params);
 console.log(prayersTimes);
+
+const dhuhrEndTime = subMinutes(prayersTimes.asr, 1);
+const asrEndTime = subMinutes(prayersTimes.maghrib, 1);
+const maghribEndTime = subMinutes(prayersTimes.isha, 1);
 
 const formattedPrayerTimes = [
   {
@@ -26,17 +22,17 @@ const formattedPrayerTimes = [
   {
     name: 'যোহর',
     startTime: prayersTimes.dhuhr.toLocaleTimeString(),
-    endTime: prayersTimes.asr.toLocaleTimeString(),
+    endTime: format(dhuhrEndTime, 'h:mm a'),
   },
   {
     name: 'আসর',
     startTime: prayersTimes.asr.toLocaleTimeString(),
-    endTime: prayersTimes.maghrib.toLocaleTimeString(),
+    endTime: format(asrEndTime, 'h:mm a'),
   },
   {
     name: 'মাগরিব ',
     startTime: prayersTimes.maghrib.toLocaleTimeString(),
-    endTime: prayersTimes.isha.toLocaleTimeString(),
+    endTime: format(maghribEndTime, 'h:mm a'),
   },
   {
     name: 'ইশা',
@@ -44,12 +40,15 @@ const formattedPrayerTimes = [
     endTime: '11:59 PM',
   },
 ];
+const subtractSehriEndTime = subMinutes(prayersTimes.fajr, 1);
+const sehriEndTime = format(subtractSehriEndTime, 'h:mm a');
+const iftarTime = prayersTimes.maghrib.toLocaleTimeString().replace(':00', '');
 console.log(formattedPrayerTimes);
 const PrayerTimeTable = () => {
   return (
-    <div className="rounded-lg bg-dailyTalim-primary-200 p-4">
-      <h4 className="text-center font-medium">নামাজের সময়সূচি</h4>
-      <div>
+    <div>
+      <div className="rounded-lg bg-dailyTalim-primary-200 p-4">
+        <h4 className="text-center font-medium">নামাজের সময়সূচি</h4>
         <Table>
           <TableBody>
             {formattedPrayerTimes.map(prayersTime => (
@@ -68,6 +67,14 @@ const PrayerTimeTable = () => {
             ))}
           </TableBody>
         </Table>
+      </div>
+      <div className="mt-3 space-y-3">
+        <div className="rounded-lg bg-dailyTalim-primary-200 px-4 py-2">
+          সেহেরী শেষ - {sehriEndTime}{' '}
+        </div>
+        <div className="rounded-lg bg-dailyTalim-primary-200 px-4 py-2">
+          ইফতার - {iftarTime}{' '}
+        </div>
       </div>
     </div>
   );
