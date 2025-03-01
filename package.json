@@ -17,6 +17,7 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-bengali-revised": "^2.0.2",
     "lucide-react": "^0.476.0",
     "moment-hijri": "^3.0.0",
     "next": "15.1.7",
