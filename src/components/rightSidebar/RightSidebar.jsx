@@ -1,6 +1,7 @@
 'use client';
 import moment from 'moment-hijri';
 import Calendar from 'date-bengali-revised';
+import PrayerTimeTable from './PrayerTimeTable';
 
 const RightSidebar = () => {
   const convertToBanglaDigits = number => {
@@ -49,14 +50,17 @@ const RightSidebar = () => {
   console.log(formattedKhristabdaDate);
 
   return (
-    <div className="h-[calc(100vh-64px)] w-72 border-l p-6">
-      <div className="text-center">
+    <div className="h-[calc(100vh-64px)] w-72 space-y-5 border-l p-6">
+      <section className="text-center">
         <h4 className="text-xl font-bold">{formattedHijriDateInBangla}</h4>
         <div className="flex justify-center gap-2">
           <p className="">{formattedBanglaDate}</p>|
           <p className="">{formattedKhristabdaDate}</p>
         </div>
-      </div>
+      </section>
+      <section>
+        <PrayerTimeTable />
+      </section>
     </div>
   );
 };
