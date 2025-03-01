@@ -50,7 +50,7 @@ const RightSidebar = () => {
   console.log(formattedKhristabdaDate);
 
   return (
-    <div className="h-[calc(100vh-64px)] w-72 space-y-5 border-l p-6">
+    <div className="scrollbar-hide fixed right-0 top-16 h-screen w-72 space-y-5 overflow-y-auto border-l bg-white p-6">
       <section className="text-center">
         <h4 className="text-xl font-bold">{formattedHijriDateInBangla}</h4>
         <div className="flex justify-center gap-2">

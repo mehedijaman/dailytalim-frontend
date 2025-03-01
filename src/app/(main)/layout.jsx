@@ -22,7 +22,7 @@ const MainLayout = ({ children }) => {
           />
         </aside>
         <div
-          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300`}
+          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pr-72 pt-16 duration-300`}
         >
           {children}
         </div>
