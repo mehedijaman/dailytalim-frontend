@@ -21,7 +21,7 @@ const MainLayout = ({ children }) => {
           setIsRightSidebarOpen={setIsRightSidebarOpen}
         />
       </header>
-      <section className="flex gap-5">
+      <section className="flex gap-4">
         <aside className="z-50 lg:z-auto lg:pt-16">
           <Sidebar
             isSidebarOpen={isSidebarOpen}
