@@ -3,8 +3,14 @@ import Image from 'next/image';
 import { CiSearch } from 'react-icons/ci';
 import ThemeControl from './ThemeControl';
 import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
+import { SiDatefns } from 'react-icons/si';
 
-const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const Navbar = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
+  isRightSidebarOpen,
+  setIsRightSidebarOpen,
+}) => {
   return (
     <nav className="flex justify-between px-2 py-3 md:px-5">
       <div className="flex items-center gap-2">
@@ -34,6 +40,12 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <ThemeControl />
         <div className="rounded-full bg-dailyTalim-primary-50 p-2">
           <CiSearch size={20} />
+        </div>
+        <div
+          onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
+          className="cursor-pointer rounded-full bg-dailyTalim-primary-50 p-2 hover:bg-dailyTalim-primary-100 md:hidden"
+        >
+          <SiDatefns size={20} />
         </div>
       </div>
     </nav>

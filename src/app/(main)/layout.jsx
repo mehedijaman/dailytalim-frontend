@@ -5,13 +5,20 @@ import Sidebar from '@/components/sidebar/Sidebar';
 import { useState } from 'react';
 
 const MainLayout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    window.innerWidth <= 767 ? false : true,
+  );
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(
+    window.innerWidth <= 767 ? false : true,
+  );
   return (
     <main>
       <header className="fixed z-40 h-16 w-full border-b bg-white lg:z-50">
         <Navbar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
+          isRightSidebarOpen={isRightSidebarOpen}
+          setIsRightSidebarOpen={setIsRightSidebarOpen}
         />
       </header>
       <section className="flex gap-5">
@@ -22,12 +29,12 @@ const MainLayout = ({ children }) => {
           />
         </aside>
         <div
-          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pr-72 pt-16 duration-300`}
+          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300 md:pr-72`}
         >
           {children}
         </div>
-        <aside className="pt-16">
-          <RightSidebar />
+        <aside className="md:pt-16">
+          <RightSidebar isRightSidebarOpen={isRightSidebarOpen} />
         </aside>
       </section>
     </main>
