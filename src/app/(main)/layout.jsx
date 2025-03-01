@@ -34,7 +34,10 @@ const MainLayout = ({ children }) => {
           {children}
         </div>
         <aside className="md:pt-16">
-          <RightSidebar isRightSidebarOpen={isRightSidebarOpen} />
+          <RightSidebar
+            isRightSidebarOpen={isRightSidebarOpen}
+            setIsRightSidebarOpen={setIsRightSidebarOpen}
+          />
         </aside>
       </section>
     </main>
