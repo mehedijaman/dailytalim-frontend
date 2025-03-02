@@ -1,7 +1,6 @@
 'use client';
 import Navbar from '@/components/navbar/Navbar';
 import RightSidebar from '@/components/rightSidebar/RightSidebar';
-import Sidebar from '@/components/sidebar/Sidebar';
 import { useState } from 'react';
 
 const MainLayout = ({ children }) => {
@@ -22,12 +21,6 @@ const MainLayout = ({ children }) => {
         />
       </header>
       <section className="flex gap-4">
-        <aside className="z-50 lg:z-auto lg:pt-16">
-          <Sidebar
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
-        </aside>
         <div
           className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300 md:pr-72`}
         >
