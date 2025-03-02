@@ -5,12 +5,8 @@ import Sidebar from '@/components/sidebar/Sidebar';
 import { useState } from 'react';
 
 const MainLayout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(
-    window.innerWidth <= 767 ? false : true,
-  );
-  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(
-    window.innerWidth <= 767 ? false : true,
-  );
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
   return (
     <main>
       <header className="fixed z-40 h-16 w-full border-b bg-white lg:z-50">
