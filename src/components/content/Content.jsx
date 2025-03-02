@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 const Content = () => {
   return (
     <main className="">
+      <h1>hello</h1>
       <div className="mx-auto w-full rounded-xl p-6 transition-all duration-300 md:p-8">
         <div className="rtl mt-5 text-right">
           <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
