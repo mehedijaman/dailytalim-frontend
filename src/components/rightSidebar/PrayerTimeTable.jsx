@@ -46,7 +46,7 @@ const iftarTime = prayersTimes.maghrib.toLocaleTimeString().replace(':00', '');
 console.log(formattedPrayerTimes);
 const PrayerTimeTable = () => {
   return (
-    <div>
+    <div className="text-dailyTalim-black">
       <div className="rounded-lg bg-dailyTalim-primary-200 p-4">
         <h4 className="text-center font-medium">নামাজের সময়সূচি</h4>
         <Table>

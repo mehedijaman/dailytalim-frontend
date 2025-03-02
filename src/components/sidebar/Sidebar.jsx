@@ -15,7 +15,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         aria-hidden={!isSidebarOpen}
       />
       <div
-        className={`h-screen w-72 overflow-y-auto border-r bg-[#f5f5f5] ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
+        className={`bg-dailyTalim-sidebar-light dark:bg-dailyTalim-sidebar-dark dark:border-dailyTalim-border-dark h-screen w-72 overflow-y-auto border-r ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
         <div>Root</div>
         <div>Root</div>
