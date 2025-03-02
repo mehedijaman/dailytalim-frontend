@@ -30,7 +30,7 @@ const MainLayout = ({ children }) => {
         <aside className="z-50 lg:z-auto lg:pt-16">
           <Sidebar
             isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsRightSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
           />
         </aside>
         <div
