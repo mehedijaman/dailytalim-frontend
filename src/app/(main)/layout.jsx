@@ -2,11 +2,20 @@
 import Navbar from '@/components/navbar/Navbar';
 import RightSidebar from '@/components/rightSidebar/RightSidebar';
 import Sidebar from '@/components/sidebar/Sidebar';
-import { useState } from 'react';
+import useWindowWidth from '@/hooks/useWindowWidth';
+import { useEffect, useState } from 'react';
 
 const MainLayout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
+  const width = useWindowWidth();
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    setIsRightSidebarOpen(width >= 767);
+    setIsSidebarOpen(width >= 767);
+  }, [width]);
+
   return (
     <main>
       <header className="fixed z-40 h-16 w-full border-b bg-white lg:z-50">
