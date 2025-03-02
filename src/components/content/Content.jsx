@@ -4,9 +4,9 @@ import { Button } from '../ui/button';
 const Content = () => {
   return (
     <main className="">
-      <div className="mx-auto w-full rounded-xl bg-white p-6 transition-all duration-300 md:p-8">
+      <div className="mx-auto w-full rounded-xl p-6 transition-all duration-300 md:p-8">
         <div className="rtl mt-5 text-right">
-          <p className="mt-2 cursor-pointer text-2xl leading-relaxed text-gray-700">
+          <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
             قال رسول الله ﷺ: <br />
             مَنْ رَأَىٰ مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ
             يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ،
@@ -18,8 +18,8 @@ const Content = () => {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-semibold text-gray-800">বাংলা:</h2>
-          <p className="mt-2 cursor-pointer text-lg leading-relaxed text-gray-700">
+          <h2 className="text-2xl font-semibold">বাংলা:</h2>
+          <p className="mt-2 cursor-pointer text-lg leading-relaxed">
             <i>
               রাসুলুল্লাহ ﷺ বলেছেন: <br />
               "তোমাদের মধ্যে কেউ কোনো অন্যায় কাজ দেখলে সে যেন তা হাত দ্বারা

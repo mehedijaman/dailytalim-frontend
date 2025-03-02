@@ -63,6 +63,14 @@ export default {
           deepGreen: '#04471C', // Even darker green for borders/muted areas
           richGreen: '#0D2818', // Deep, rich green for backgrounds/subtle accents
           mutedGray: '#737373', // Medium gray for muted text, borders, or icons
+          darkBg: '#101720',
+          sidebar: {
+            light: '#f5f5f5',
+            dark: '#18212f',
+          },
+          border: {
+            dark: '#334155',
+          },
         },
       },
     },
