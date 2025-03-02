@@ -31,7 +31,7 @@ const MainLayout = ({ children }) => {
         <div
           className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300 md:pr-72`}
         >
-          {children}
+          <div className="mx-auto max-w-4xl">{children}</div>
         </div>
         <aside className="md:pt-16">
           <RightSidebar
