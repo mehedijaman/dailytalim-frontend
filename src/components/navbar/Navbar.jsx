@@ -16,7 +16,7 @@ const Navbar = ({
       <div className="flex items-center gap-2">
         <div
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="cursor-pointer rounded-[5px] bg-dailyTalim-primary-100 p-2 text-dailyTalim-mutedGray transition-colors duration-200 hover:bg-dailyTalim-primary-200"
+          className="dark:bg-dailyTalim-border-dark cursor-pointer rounded-[5px] bg-dailyTalim-primary-100 p-2 text-dailyTalim-mutedGray transition-colors duration-200 hover:bg-dailyTalim-primary-200 dark:text-white"
           title="Toggle Sidebar"
         >
           <div>
@@ -36,14 +36,14 @@ const Navbar = ({
         />
         <h1 className="text-xl font-bold md:text-2xl"> ডেইলি তালিম </h1>
       </div>
-      <div className="flex items-center gap-2 text-dailyTalim-mutedGray">
+      <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
         <ThemeControl />
-        <div className="rounded-full bg-dailyTalim-primary-50 p-2">
+        <div className="dark:bg-dailyTalim-border-dark rounded-full bg-dailyTalim-primary-100 p-2">
           <CiSearch size={20} />
         </div>
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
-          className="cursor-pointer rounded-full bg-dailyTalim-primary-50 p-2 hover:bg-dailyTalim-primary-100 md:hidden"
+          className="dark:bg-dailyTalim-border-dark cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 md:hidden"
         >
           <SiDatefns size={20} />
         </div>
