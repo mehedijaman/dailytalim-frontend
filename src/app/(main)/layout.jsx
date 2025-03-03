@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
 
   useEffect(() => {
     setIsRightSidebarOpen(width >= 767);
-    setIsSidebarOpen(width >= 767);
+    setIsSidebarOpen(width >= 1024);
   }, [width]);
 
   return (
