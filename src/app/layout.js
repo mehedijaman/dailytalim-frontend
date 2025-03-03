@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           attribute="class"
           disableTransitionOnChange
         >
-          <main className="h-screen dark:bg-[#101720]">{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>

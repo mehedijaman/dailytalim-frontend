@@ -7,7 +7,6 @@ const params = CalculationMethod.MuslimWorldLeague();
 params.madhab = Madhab.Hanafi;
 const date = new Date();
 const prayersTimes = new PrayerTimes(coordinates, date, params);
-console.log(prayersTimes);
 
 const dhuhrEndTime = subMinutes(prayersTimes.asr, 1);
 const asrEndTime = subMinutes(prayersTimes.maghrib, 1);
@@ -43,7 +42,7 @@ const formattedPrayerTimes = [
 const subtractSehriEndTime = subMinutes(prayersTimes.fajr, 1);
 const sehriEndTime = format(subtractSehriEndTime, 'h:mm a');
 const iftarTime = prayersTimes.maghrib.toLocaleTimeString().replace(':00', '');
-console.log(formattedPrayerTimes);
+
 const PrayerTimeTable = () => {
   return (
     <div className="text-dailyTalim-black">

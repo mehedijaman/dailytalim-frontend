@@ -11,13 +11,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-:root {
-  /* Your default theme */
-  --background: white;
-  --foreground: black;
-}
-
-[data-theme='dark'] {
-  --background: #101720;
-  --foreground: white;
+.dark:root {
+  background: #101720;
 }
