@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
 
   return (
     <main>
-      <header className="dark:bg-dailyTalim-darkBg dark:border-dailyTalim-border-dark fixed z-40 h-16 w-full border-b bg-white lg:z-50">
+      <header className="fixed z-40 h-16 w-full border-b bg-white dark:border-dailyTalim-border-dark dark:bg-dailyTalim-darkBg lg:z-50">
         <Navbar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
