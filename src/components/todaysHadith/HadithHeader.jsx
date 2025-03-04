@@ -2,6 +2,7 @@ import { LuCopy } from 'react-icons/lu';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { Button } from '../ui/button';
 import { SiKnexdotjs } from 'react-icons/si';
+import DownloadButton from './DownloadButton';
 
 const HadithHeader = () => {
   return (
@@ -11,11 +12,7 @@ const HadithHeader = () => {
       </div>
 
       <div className="flex items-center gap-3 md:gap-6">
-        <div>
-          <Button className="rounded-[6px] bg-green-600 px-4 py-2 text-white shadow-md transition-all duration-300 hover:bg-green-700">
-            সহিহ হাদিস
-          </Button>
-        </div>
+        <DownloadButton />
         <div className="flex cursor-pointer items-center gap-3 text-xl md:gap-6 md:text-2xl">
           <span>
             <LuCopy />
