@@ -4,7 +4,7 @@ import HadithHeader from './HadithHeader';
 
 const TodaysHadith = () => {
   return (
-    <main className="">
+    <main>
       <HadithHeader />
       <div className="mx-auto w-full rounded-xl p-6 transition-all duration-300 md:p-8">
         <div className="rtl mt-5 text-right">
