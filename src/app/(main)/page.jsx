@@ -1,9 +1,9 @@
-import Content from '@/components/content/Content';
+import MainContent from '@/components/content/MainContent';
 import React from 'react';
 
 const Root = () => {
   return <div>
-    <Content/>
+    <MainContent/>
   </div>;
 };
 
