@@ -70,7 +70,7 @@ const TodaysHadith = () => {
               <div className="mt-4 flex items-center gap-3 border-t pt-2 font-semibold">
                 <p className="flex items-center gap-2">
                   <IoBookOutline size={20} />
-                  Daily Talim
+                  DailyTalim
                 </p>
                 |
                 <p className="flex items-center gap-2">
