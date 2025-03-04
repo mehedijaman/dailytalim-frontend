@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from '../ui/button';
 import HadithHeader from './HadithHeader';
+import DownloadButton from './DownloadButton';
+import ShareButton from './ShareButton';
 
 const TodaysHadith = () => {
   return (
@@ -32,15 +33,10 @@ const TodaysHadith = () => {
             <br />
             <span className="text-base font-semibold text-green-600">
               (সহিহ মুসলিম: ৪৯)
-            </span>
+            </span>{' '}
           </p>
         </div>
-
-        <div className="mt-8 flex justify-end">
-          <Button className="rounded-[6px] bg-green-600 px-6 py-2 text-white shadow-md transition-all duration-300 hover:bg-green-700">
-            আরো...
-          </Button>
-        </div>
+        <ShareButton />
       </div>
     </main>
   );
