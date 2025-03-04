@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from '../ui/button';
+import HadithHeader from './HadithHeader';
 
-const Content = () => {
+const TodaysHadith = () => {
   return (
     <main className="">
+      <HadithHeader />
       <div className="mx-auto w-full rounded-xl p-6 transition-all duration-300 md:p-8">
         <div className="rtl mt-5 text-right">
           <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
@@ -34,10 +36,9 @@ const Content = () => {
           </p>
         </div>
 
-        {/* Read More Button */}
         <div className="mt-8 flex justify-end">
           <Button className="rounded-[6px] bg-green-600 px-6 py-2 text-white shadow-md transition-all duration-300 hover:bg-green-700">
-            Read more
+            আরো...
           </Button>
         </div>
       </div>
@@ -45,4 +46,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default TodaysHadith;
