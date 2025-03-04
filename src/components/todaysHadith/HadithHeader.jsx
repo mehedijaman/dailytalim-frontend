@@ -13,12 +13,9 @@ const HadithHeader = ({ handleDownloadHadithImage }) => {
 
       <div className="flex items-center gap-3 md:gap-6">
         <DownloadButton handleDownloadHadithImage={handleDownloadHadithImage} />
-        <div className="flex cursor-pointer items-center gap-3 text-xl md:gap-6 md:text-2xl">
+        <div className="cursor-pointer">
           <span>
-            <LuCopy />
-          </span>
-          <span className="hover:text-green-600">
-            <HiDotsHorizontal />
+            <LuCopy size={20} />
           </span>
         </div>
       </div>
