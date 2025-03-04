@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "tasklist | findstr /I 'next' && taskkill /F /IM node.exe || echo No Next.js processes found",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -20,6 +21,8 @@
     "clsx": "^2.1.1",
     "date-bengali-revised": "^2.0.2",
     "date-fns": "^4.1.0",
+    "downloadjs": "^1.4.7",
+    "html-to-image": "^1.11.13",
     "lucide-react": "^0.476.0",
     "moment-hijri": "^3.0.0",
     "next": "15.1.7",

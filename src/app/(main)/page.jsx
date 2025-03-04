@@ -1,10 +1,11 @@
-import MainContent from '@/components/content/MainContent';
+import TodaysHadith from '@/components/todaysHadith/TodaysHadith';
 import React from 'react';
 
 const Root = () => {
-  return <div>
-    <MainContent/>
-  </div>;
+  return (
+    <div>
+      <TodaysHadith />
+    </div>
+  );
 };
-
 export default Root;
