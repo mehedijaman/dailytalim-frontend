@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 import { SiKnexdotjs } from 'react-icons/si';
 import DownloadButton from './DownloadButton';
 
-const HadithHeader = () => {
+const HadithHeader = ({ handleDownloadHadithImage }) => {
   return (
     <main className="mt-8 flex items-center justify-between">
       <div className="text-xl text-green-600 md:gap-4 md:text-2xl">
@@ -12,7 +12,7 @@ const HadithHeader = () => {
       </div>
 
       <div className="flex items-center gap-3 md:gap-6">
-        <DownloadButton />
+        <DownloadButton handleDownloadHadithImage={handleDownloadHadithImage} />
         <div className="flex cursor-pointer items-center gap-3 text-xl md:gap-6 md:text-2xl">
           <span>
             <LuCopy />
