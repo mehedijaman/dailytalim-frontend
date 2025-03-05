@@ -1,6 +1,8 @@
+import CopyButton from './CopyButton';
 import { LuCopy } from 'react-icons/lu';
-import { FaStar } from 'react-icons/fa';
-import { CiStar } from 'react-icons/ci';
+import { HiDotsHorizontal } from 'react-icons/hi';
+import { Button } from '../ui/button';
+import { SiKnexdotjs } from 'react-icons/si';
 import DownloadButton from './DownloadButton';
 
 const HadithHeader = ({ handleDownloadHadithImage }) => {
@@ -13,11 +15,7 @@ const HadithHeader = ({ handleDownloadHadithImage }) => {
 
       <div className="flex items-center gap-3 md:gap-6">
         <DownloadButton handleDownloadHadithImage={handleDownloadHadithImage} />
-        <div className="cursor-pointer">
-          <span>
-            <LuCopy size={20} />
-          </span>
-        </div>
+        <CopyButton />
       </div>
     </main>
   );
