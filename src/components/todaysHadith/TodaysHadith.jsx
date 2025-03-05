@@ -11,7 +11,7 @@ const TodaysHadith = () => {
     <main className="">
       <HadithHeader />
       <div className="flex justify-center">
-        <div id="hadith" className="overflow-hidden rounded-xl">
+        <div id="hadith-wrapper" className="overflow-hidden rounded-xl">
           {/* Hidden heading: This is diplayed on the hadith photo card */}
           <h2
             id="hadith-header"
@@ -20,7 +20,10 @@ const TodaysHadith = () => {
             <span className="font-semibold">আজকের তালিম</span> -{' '}
             {moment().locale('en').format('D MMM, YYYY')}
           </h2>
-          <div className="w-full bg-white p-6 dark:bg-dailyTalim-darkBg">
+          <div
+            id="hadith"
+            className="w-full bg-white p-2 dark:bg-dailyTalim-darkBg"
+          >
             {/*Arabic Hadith */}
             <div className="text-right">
               <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
