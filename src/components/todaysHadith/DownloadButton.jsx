@@ -1,9 +1,12 @@
 import { Button } from '../ui/button';
+import { FiDownload } from 'react-icons/fi';
 
-const DownloadButton = () => {
+const DownloadButton = ({ handleDownloadHadithImage }) => {
   return (
-    <div className="flex justify-end">
-      <Button className="rounded-[6px]">ডাউনলোদ</Button>
+    <div onClick={handleDownloadHadithImage} className="flex justify-end">
+      <Button className="rounded-[6px]">
+        ডাউনলোদ <FiDownload />{' '}
+      </Button>
     </div>
   );
 };
