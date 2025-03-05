@@ -54,7 +54,7 @@ const ShareButton = () => {
               <IoMdClose size={24} />
             </button>
 
-            <p className="mb-4 text-center text-lg font-semibold">
+            <p className="mb-4 text-center text-lg font-semibold text-dailyTalim-black">
               শেয়ার করুন:
             </p>
 
