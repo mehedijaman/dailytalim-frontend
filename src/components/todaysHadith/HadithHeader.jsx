@@ -4,7 +4,7 @@ import { CiStar } from 'react-icons/ci';
 
 const HadithHeader = ({ handleDownloadHadithImage }) => {
   return (
-    <main className="mt-8 flex items-center justify-between">
+    <main className="mt-8 flex items-center justify-between px-6">
       <div className="flex items-center gap-2 text-xl text-green-600 md:text-2xl">
         <CiStar size={30} />
         <h2 className="font-bold">আজকের তালিম</h2>
