@@ -1,44 +1,15 @@
 'use client';
 import HadithHeader from './HadithHeader';
 import ShareButton from './ShareButton';
-import * as htmlToImage from 'html-to-image';
-import download from 'downloadjs';
-import React from 'react';
 import { IoBookOutline } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
 import moment from 'moment-hijri';
 
 const TodaysHadith = () => {
-  const handleDownloadHadithImage = () => {
-    const hadithElement = document.getElementById('hadith');
-    const footer = document.getElementById('hadith-footer');
-    const hadithHeader = document.getElementById('hadith-header');
-
-    footer.classList.remove('hidden');
-    hadithHeader.classList.remove('hidden');
-    htmlToImage
-      .toPng(hadithElement, {
-        style: {
-          borderRadius: '12px',
-          overflow: 'hidden',
-        },
-      })
-      .then(imgUrl => {
-        download(imgUrl, 'hadith.png');
-        footer.classList.add('hidden');
-        hadithHeader.classList.add('hidden');
-      })
-      .catch(error => {
-        console.error('Error generating image:', error);
-        footer.classList.add('hidden');
-        hadithHeader.classList.add('hidden');
-      });
-  };
-
   return (
     <main className="">
-      <HadithHeader handleDownloadHadithImage={handleDownloadHadithImage} />
+      <HadithHeader />
       <div className="flex justify-center">
         <div id="hadith" className="overflow-hidden rounded-xl">
           <h2

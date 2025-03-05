@@ -2,7 +2,7 @@ import CopyButton from './CopyButton';
 import DownloadButton from './DownloadButton';
 import { CiStar } from 'react-icons/ci';
 
-const HadithHeader = ({ handleDownloadHadithImage }) => {
+const HadithHeader = () => {
   return (
     <main className="mt-8 flex items-center justify-between px-6">
       <div className="flex items-center gap-2 text-xl text-green-600 md:text-2xl">
@@ -11,7 +11,7 @@ const HadithHeader = ({ handleDownloadHadithImage }) => {
       </div>
 
       <div className="flex items-center gap-3 md:gap-6">
-        <DownloadButton handleDownloadHadithImage={handleDownloadHadithImage} />
+        <DownloadButton />
         <CopyButton />
       </div>
     </main>
