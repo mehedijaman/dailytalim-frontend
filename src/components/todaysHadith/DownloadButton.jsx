@@ -12,7 +12,7 @@ const DownloadButton = () => {
 
     footer.classList.remove('hidden');
     hadithHeader.classList.remove('hidden');
-    hadith.classList.add('p-6');
+    hadith.classList.add('px-6');
     htmlToImage
       .toPng(hadithElement, {
         style: {
@@ -24,13 +24,13 @@ const DownloadButton = () => {
         download(imgUrl, 'hadith.png');
         footer.classList.add('hidden');
         hadithHeader.classList.add('hidden');
-        hadith.classList.remove('p-6');
+        hadith.classList.remove('px-6');
       })
       .catch(error => {
         console.error('Error generating image:', error);
         footer.classList.add('hidden');
         hadithHeader.classList.add('hidden');
-        hadith.classList.remove('p-6');
+        hadith.classList.remove('px-6');
       });
   };
   return (

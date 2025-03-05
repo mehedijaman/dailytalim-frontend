@@ -76,8 +76,8 @@ const TodaysHadith = () => {
             </div>
 
             {/* Hidden footer: This is displayed on hadith photo card*/}
-            <footer id="hadith-footer" className="mt-4 hidden p-3">
-              <div className="mt-4 flex items-center gap-3 border-t pt-2 font-semibold">
+            <footer id="hadith-footer" className="hidden">
+              <div className="mt-4 flex items-center gap-3 border-t px-2 pb-1 pt-2 font-semibold">
                 <p className="flex items-center gap-2">
                   <IoBookOutline size={20} />
                   DailyTalim
