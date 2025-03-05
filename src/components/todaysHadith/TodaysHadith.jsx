@@ -7,28 +7,32 @@ import React from 'react';
 import { IoBookOutline } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
+import moment from 'moment-hijri';
 
 const TodaysHadith = () => {
   const handleDownloadHadithImage = () => {
     const hadithElement = document.getElementById('hadith');
     const footer = document.getElementById('hadith-footer');
+    const hadithHeader = document.getElementById('hadith-header');
 
     footer.classList.remove('hidden');
+    hadithHeader.classList.remove('hidden');
     htmlToImage
       .toPng(hadithElement, {
         style: {
           borderRadius: '12px',
           overflow: 'hidden',
-          padding,
         },
       })
       .then(imgUrl => {
         download(imgUrl, 'hadith.png');
         footer.classList.add('hidden');
+        hadithHeader.classList.add('hidden');
       })
       .catch(error => {
         console.error('Error generating image:', error);
         footer.classList.add('hidden');
+        hadithHeader.classList.add('hidden');
       });
   };
 
@@ -37,8 +41,15 @@ const TodaysHadith = () => {
       <HadithHeader handleDownloadHadithImage={handleDownloadHadithImage} />
       <div className="flex justify-center">
         <div id="hadith" className="overflow-hidden rounded-xl">
-          <div className="w-full rounded-xl bg-white p-2 dark:bg-dailyTalim-darkBg">
-            <div className="rtl mt-5 text-right">
+          <h2
+            id="hadith-header"
+            className="hidden rounded-t-md bg-dailyTalim-primary-500 py-2 text-center text-2xl"
+          >
+            <span className="font-semibold">আজকের তালিম</span> -{' '}
+            {moment().locale('en').format('D MMM, YYYY')}
+          </h2>
+          <div className="w-full bg-white p-6 dark:bg-dailyTalim-darkBg">
+            <div className="text-right">
               <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
                 حَدَّثَنَا مُوسَى بْنُ عَبْدِ الرَّحْمَنِ الْكِنْدِيُّ
                 الْكُوفِيُّ، حَدَّثَنَا زَيْدُ بْنُ الْحُبَابِ، أَخْبَرَنَا
