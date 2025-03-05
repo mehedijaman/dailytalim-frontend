@@ -36,7 +36,7 @@ const TodaysHadith = () => {
       <HadithHeader handleDownloadHadithImage={handleDownloadHadithImage} />
       <div className="flex justify-center">
         <div id="hadith" className="overflow-hidden rounded-xl">
-          <div className="w-full rounded-xl bg-white p-8 dark:bg-dailyTalim-darkBg">
+          <div className="w-full rounded-xl bg-white p-2 dark:bg-dailyTalim-darkBg">
             <div className="rtl mt-5 text-right">
               <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
                 قال رسول الله ﷺ: <br />
