@@ -5,6 +5,12 @@ import { IoBookOutline } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
 import moment from 'moment-hijri';
+import useAllDate from '@/hooks/useAllDate';
+const {
+  formattedBanglaDate,
+  formattedHijriDateInBangla,
+  formattedKhristabdaDate,
+} = useAllDate();
 
 const TodaysHadith = () => {
   return (
@@ -13,13 +19,21 @@ const TodaysHadith = () => {
       <div className="flex justify-center">
         <div id="hadith-wrapper" className="overflow-hidden rounded-xl">
           {/* Hidden heading: This is diplayed on the hadith photo card */}
-          <h2
+          <div
             id="hadith-header"
-            className="hidden rounded-t-md bg-dailyTalim-primary-500 py-2 text-center text-2xl"
+            className="hidden rounded-t-md bg-dailyTalim-primary-500 py-2"
           >
-            <span className="font-semibold">আজকের তালিম</span> -{' '}
-            {moment().locale('en').format('D MMM, YYYY')}
-          </h2>
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-2xl font-semibold">আজকের তালিম</h2>
+              <div className="border-l-2 pl-4">
+                <p className="font-semibold">{formattedHijriDateInBangla}</p>
+                <p className="flex gap-2">
+                  <span>{formattedBanglaDate}</span> |{' '}
+                  <span>{formattedKhristabdaDate}</span>
+                </p>
+              </div>
+            </div>
+          </div>
           <div
             id="hadith"
             className="w-full bg-white p-2 dark:bg-dailyTalim-darkBg"
