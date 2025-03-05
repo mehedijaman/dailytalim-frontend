@@ -12,6 +12,7 @@ const TodaysHadith = () => {
       <HadithHeader />
       <div className="flex justify-center">
         <div id="hadith" className="overflow-hidden rounded-xl">
+          {/* Hidden heading: This is diplayed on the hadith photo card */}
           <h2
             id="hadith-header"
             className="hidden rounded-t-md bg-dailyTalim-primary-500 py-2 text-center text-2xl"
@@ -20,6 +21,7 @@ const TodaysHadith = () => {
             {moment().locale('en').format('D MMM, YYYY')}
           </h2>
           <div className="w-full bg-white p-6 dark:bg-dailyTalim-darkBg">
+            {/*Arabic Hadith */}
             <div className="text-right">
               <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
                 حَدَّثَنَا مُوسَى بْنُ عَبْدِ الرَّحْمَنِ الْكِنْدِيُّ
@@ -36,7 +38,7 @@ const TodaysHadith = () => {
                 صَحِيحٌ .
               </p>
             </div>
-
+            {/* Hadith Bangla Translation*/}
             <div className="mt-5">
               <p className="mt-2 cursor-pointer text-left text-lg leading-relaxed">
                 আবূ উমামা (রাঃ) হতে বর্ণিত: <br />
@@ -55,6 +57,8 @@ const TodaysHadith = () => {
                 </span>{' '}
               </p>
             </div>
+
+            {/* Hidden footer: This is displayed on hadith photo card*/}
             <footer id="hadith-footer" className="mt-4 hidden p-3">
               <div className="mt-4 flex items-center gap-3 border-t pt-2 font-semibold">
                 <p className="flex items-center gap-2">
