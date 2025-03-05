@@ -1,9 +1,6 @@
 import CopyButton from './CopyButton';
-import { LuCopy } from 'react-icons/lu';
-import { HiDotsHorizontal } from 'react-icons/hi';
-import { Button } from '../ui/button';
-import { SiKnexdotjs } from 'react-icons/si';
 import DownloadButton from './DownloadButton';
+import { CiStar } from 'react-icons/ci';
 
 const HadithHeader = ({ handleDownloadHadithImage }) => {
   return (
