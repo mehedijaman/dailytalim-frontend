@@ -17,11 +17,14 @@ const TodaysHadith = () => {
     <main className="">
       <HadithHeader />
       <div className="flex justify-center">
-        <div id="hadith-wrapper" className="overflow-hidden rounded-xl">
+        <div
+          id="hadith-wrapper"
+          className="overflow-hidden rounded-xl bg-white p-2 dark:bg-dailyTalim-darkBg"
+        >
           {/* Hidden heading: This is diplayed on the hadith photo card */}
           <div
             id="hadith-header"
-            className="rounded-t-md bg-dailyTalim-darkBg px-5 pt-4 text-dailyTalim-primary-500"
+            className="hidden rounded-t-md px-5 pt-4 text-dailyTalim-primary-500"
           >
             <div className="flex items-center justify-center gap-4 border-b border-dailyTalim-primary-500 px-5 pb-2">
               <h2 className="text-2xl font-semibold">আজকের তালিম</h2>
@@ -34,10 +37,7 @@ const TodaysHadith = () => {
               </div>
             </div>
           </div>
-          <div
-            id="hadith"
-            className="w-full bg-white p-2 dark:bg-dailyTalim-darkBg"
-          >
+          <div id="hadith" className="w-full">
             {/*Arabic Hadith */}
             <div className="text-right">
               <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
