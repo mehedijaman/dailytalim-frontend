@@ -5,7 +5,7 @@ const DownloadButton = ({ handleDownloadHadithImage }) => {
   return (
     <div onClick={handleDownloadHadithImage} className="flex justify-end">
       <Button className="rounded-[6px]">
-        ডাউনলোড <FiDownload />{' '}
+        <span className="hidden md:block">ডাউনলোড</span> <FiDownload />{' '}
       </Button>
     </div>
   );
