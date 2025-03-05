@@ -1,6 +1,7 @@
 import { Anek_Bangla } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
+import { Toaster } from 'sonner';
 
 const anekBangla = Anek_Bangla({
   variable: '--anek-bangla',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
