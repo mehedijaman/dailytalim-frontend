@@ -59,7 +59,7 @@ const ShareButton = () => {
                 <FaFacebook size={32} className="cursor-pointer text-blue-600 hover:scale-110 transition-transform" />
               </FacebookShareButton>
 
-              <FacebookMessengerShareButton url={shareUrl} appId="YOUR_FACEBOOK_APP_ID">
+              <FacebookMessengerShareButton url={shareUrl} >
                 <FaFacebookMessenger size={32} className="cursor-pointer text-blue-500 hover:scale-110 transition-transform" />
               </FacebookMessengerShareButton>
 
