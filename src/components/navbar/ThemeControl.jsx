@@ -1,15 +1,7 @@
 'use client';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+
 import { IoMdSunny } from 'react-icons/io';
 import { IoMoon } from 'react-icons/io5';
-import { WiMoonAltWaxingCrescent5 } from 'react-icons/wi';
 import { useTheme } from 'next-themes';
 
 const ThemeControl = () => {
