@@ -20,10 +20,14 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const ShareButton = () => {
   const [showOptions, setShowOptions] = useState(false);
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = 'Check out this amazing content!';
-
   const modalRef = useRef(null);
+
+  // Dynamic share content
+  const hadithTitle = 'আজকের হাদিস'; 
+  const hadithContent =
+    'রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম) বলেছেনঃ তোমাদের পাঁচ ওয়াক্ত নামায আদায় কর...';
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareText = `${hadithTitle} - ${hadithContent}\n\nআরো জানতে ভিজিট করুন: ${shareUrl}`;
 
   useEffect(() => {
     const handleClickOutside = event => {
@@ -66,11 +70,7 @@ const ShareButton = () => {
             </p>
 
             <div className="flex justify-center gap-6">
-              <FacebookShareButton
-                url={shareUrl}
-                quote={shareText}
-                hashtag="#Share"
-              >
+              <FacebookShareButton url={shareUrl} quote={shareText} hashtag="#Hadith">
                 <FaFacebook
                   size={32}
                   className="cursor-pointer text-blue-600 transition-transform hover:scale-110"
@@ -88,23 +88,14 @@ const ShareButton = () => {
                 />
               </TwitterShareButton>
 
-              <LinkedinShareButton
-                url={shareUrl}
-                title={shareText}
-                summary={shareText}
-                source={shareUrl}
-              >
+              <LinkedinShareButton url={shareUrl} title={hadithTitle} summary={hadithContent} source={shareUrl}>
                 <FaLinkedin
                   size={32}
                   className="cursor-pointer text-blue-700 transition-transform hover:scale-110"
                 />
               </LinkedinShareButton>
 
-              <WhatsappShareButton
-                url={shareUrl}
-                title={shareText}
-                separator=" - "
-              >
+              <WhatsappShareButton url={shareUrl} title={shareText} separator=" - ">
                 <FaWhatsapp
                   size={32}
                   className="cursor-pointer text-green-500 transition-transform hover:scale-110"
