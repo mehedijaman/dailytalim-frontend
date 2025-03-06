@@ -6,6 +6,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import useAllDate from '@/hooks/useAllDate';
 import FontSize from './FontSize';
 import { useState } from 'react';
+import useFontSize from '@/hooks/useFontSize';
 const {
   formattedBanglaDate,
   formattedHijriDateInBangla,
@@ -14,7 +15,8 @@ const {
 
 const TodaysHadith = () => {
 
-  const [fontSize, setFontSize] = useState({ arabic: 24, bangla: 19 });
+  // const [fontSize, setFontSize] = useState({ arabic: 24, bangla: 19 });
+  const { fontSize, setFontSize } = useFontSize();
 
   return (
     <main className="">
