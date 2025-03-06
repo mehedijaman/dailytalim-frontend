@@ -9,12 +9,16 @@ import {
   LinkedinShareButton,
   WhatsappShareButton,
   FacebookMessengerShareButton,
+  EmailShareButton,
+  TelegramShareButton,
 } from 'react-share';
 import {
   FaFacebook,
   FaLinkedin,
   FaWhatsapp,
   FaFacebookMessenger,
+  FaTelegram,
+  FaEnvelope,
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
@@ -40,6 +44,7 @@ const ShareButton = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  
 
   return (
     <div>
@@ -94,13 +99,27 @@ const ShareButton = () => {
                   className="cursor-pointer text-blue-700 transition-transform hover:scale-110"
                 />
               </LinkedinShareButton>
-
+        
               <WhatsappShareButton url={shareUrl} title={shareText} separator=" - ">
                 <FaWhatsapp
                   size={32}
                   className="cursor-pointer text-green-500 transition-transform hover:scale-110"
                 />
               </WhatsappShareButton>
+
+              <TelegramShareButton url={shareUrl} title={shareText}>
+                <FaTelegram
+                  size={32}
+                  className="cursor-pointer text-blue-500 transition-transform hover:scale-110"
+                />
+              </TelegramShareButton>
+              
+              <EmailShareButton url={shareUrl} subject={hadithTitle} body={shareText}>
+                <FaEnvelope
+                  size={32}
+                  className="cursor-pointer text-blue-500 transition-transform hover:scale-110"
+                />
+              </EmailShareButton>
             </div>
           </div>
         </div>
