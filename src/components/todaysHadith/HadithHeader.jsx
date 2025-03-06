@@ -1,12 +1,11 @@
 import CopyButton from './CopyButton';
 import DownloadButton from './DownloadButton';
-import { CiStar } from 'react-icons/ci';
-
+import { FaStar } from 'react-icons/fa';
 const HadithHeader = () => {
   return (
     <main className="mt-2 flex items-center justify-between border-b-2 border-dailyTalim-primary-500 px-2 pb-2">
-      <div className="flex items-center gap-2 text-xl text-green-600 md:text-2xl">
-        <CiStar size={30} />
+      <div className="flex items-center gap-2 text-xl text-dailyTalim-primary-500 md:text-2xl">
+        <FaStar size={30} />
         <h2 className="font-bold">আজকের তালিম</h2>
       </div>
 
