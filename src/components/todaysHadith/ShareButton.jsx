@@ -23,7 +23,7 @@ const ShareButton = () => {
   const modalRef = useRef(null);
 
   // Dynamic share content
-  const hadithTitle = 'আজকের হাদিস'; 
+  const hadithTitle = 'আজকের হাদিস';
   const hadithContent =
     'রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম) বলেছেনঃ তোমাদের পাঁচ ওয়াক্ত নামায আদায় কর...';
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
@@ -43,12 +43,13 @@ const ShareButton = () => {
 
   return (
     <div>
-      <div className="mt-2 flex justify-end">
+      <div className="flex justify-end">
         <Button
           onClick={() => setShowOptions(true)}
-          className="flex items-center gap-2"
+          className="flex size-8 items-center gap-2 md:size-auto"
         >
-          শেয়ার <IoMdShareAlt size={20} />
+          <span className="hidden xl:block">শেয়ার</span>{' '}
+          <IoMdShareAlt size={20} />
         </Button>
       </div>
 
@@ -70,15 +71,25 @@ const ShareButton = () => {
             </p>
 
             <div className="flex justify-center gap-6">
-              <FacebookShareButton url={shareUrl} quote={shareText} hashtag="#Hadith">
+              <FacebookShareButton
+                url={shareUrl}
+                quote={shareText}
+                hashtag="#Hadith"
+              >
                 <FaFacebook
                   size={32}
                   className="cursor-pointer text-blue-600 transition-transform hover:scale-110"
                 />
               </FacebookShareButton>
 
-              <FacebookMessengerShareButton url={shareUrl} appId="YOUR_FACEBOOK_APP_ID">
-                <FaFacebookMessenger size={32} className="cursor-pointer text-blue-500 hover:scale-110 transition-transform" />
+              <FacebookMessengerShareButton
+                url={shareUrl}
+                appId="YOUR_FACEBOOK_APP_ID"
+              >
+                <FaFacebookMessenger
+                  size={32}
+                  className="cursor-pointer text-blue-500 transition-transform hover:scale-110"
+                />
               </FacebookMessengerShareButton>
 
               <TwitterShareButton url={shareUrl} title={shareText}>
@@ -88,14 +99,23 @@ const ShareButton = () => {
                 />
               </TwitterShareButton>
 
-              <LinkedinShareButton url={shareUrl} title={hadithTitle} summary={hadithContent} source={shareUrl}>
+              <LinkedinShareButton
+                url={shareUrl}
+                title={hadithTitle}
+                summary={hadithContent}
+                source={shareUrl}
+              >
                 <FaLinkedin
                   size={32}
                   className="cursor-pointer text-blue-700 transition-transform hover:scale-110"
                 />
               </LinkedinShareButton>
 
-              <WhatsappShareButton url={shareUrl} title={shareText} separator=" - ">
+              <WhatsappShareButton
+                url={shareUrl}
+                title={shareText}
+                separator=" - "
+              >
                 <FaWhatsapp
                   size={32}
                   className="cursor-pointer text-green-500 transition-transform hover:scale-110"
