@@ -27,7 +27,7 @@ const TodaysHadith = () => {
             className="hidden rounded-t-md px-5 pt-4 text-dailyTalim-primary-500"
           >
             <div className="flex items-center justify-center gap-4 border-b border-dailyTalim-primary-500 px-5 pb-2">
-              <h2 className="text-2xl font-semibold">আজকের তালিম</h2>
+              <h2 className="text-xl font-semibold md:text-2xl">আজকের তালিম</h2>
               <div className="border-l-2 border-dailyTalim-primary-500 pl-4">
                 <p className="font-semibold">{formattedHijriDateInBangla}</p>
                 <p className="flex gap-2">
