@@ -39,7 +39,7 @@ const useAllDate = () => {
   ).format('D MMMM, Y');
 
   // Get Hijri date using moment-hijri
-  const hijriDate = currentDate.format('iD iMMMM iYYYY');
+  const hijriDate = currentDate.subtract(1, 'day').format('iD iMMMM iYYYY');
   const [hijriDay, hijriMonth, hijriYear] = hijriDate.split(' ');
 
   // Format Hijri date in Bangla
