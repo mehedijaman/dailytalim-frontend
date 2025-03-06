@@ -97,7 +97,6 @@ const TodaysHadith = () => {
           </div>
         </div>
       </div>
-      <ShareButton />
     </main>
   );
 };
