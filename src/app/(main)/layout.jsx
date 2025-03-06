@@ -1,5 +1,6 @@
 'use client';
 import Navbar from '@/components/navbar/Navbar';
+import NavBarBottom from '@/components/navBarBottom/NavBarBottom';
 import RightSidebar from '@/components/rightSidebar/RightSidebar';
 import Sidebar from '@/components/sidebar/Sidebar';
 import useWindowWidth from '@/hooks/useWindowWidth';
@@ -34,17 +35,20 @@ const MainLayout = ({ children }) => {
           />
         </aside>
         <div
-          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300 md:pr-72`}
+          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding py-16 duration-300 md:pr-72`}
         >
           <div className="mx-auto my-8 max-w-4xl">{children}</div>
         </div>
-        <aside className="md:pt-16">
+        <aside className="z-50 md:pt-16">
           <RightSidebar
             isRightSidebarOpen={isRightSidebarOpen}
             setIsRightSidebarOpen={setIsRightSidebarOpen}
           />
         </aside>
       </section>
+      <nav className={''}>
+        <NavBarBottom />
+      </nav>
     </main>
   );
 };
