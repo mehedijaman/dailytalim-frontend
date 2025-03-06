@@ -110,11 +110,14 @@ const TodaysHadith = () => {
             </footer>
           </div>
         </div>
+        
       </div>
-      <ShareButton />
 
-      {/* font size */}
+      
+      
       <FontSize fontSize={fontSize} increaseFontSize={increaseFontSize} decreaseFontSize={decreaseFontSize} />
+
+
     </main>
   );
 };

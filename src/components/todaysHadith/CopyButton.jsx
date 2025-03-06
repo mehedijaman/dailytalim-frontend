@@ -1,7 +1,10 @@
 'use client';
 
-import { LuCopy } from 'react-icons/lu';
+import { BsClipboard2Fill } from 'react-icons/bs';
+import { BsClipboard2CheckFill } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
+import { Button } from '../ui/button';
+import { FiDownload } from 'react-icons/fi';
 
 const CopyButton = () => {
   const [copied, setCopied] = useState(false);
@@ -27,17 +30,17 @@ const CopyButton = () => {
   };
 
   return (
-    <button
-      onClick={handleCopy}
-      className="relative flex items-center gap-2 p-2 text-gray-700 hover:text-green-600"
-    >
-      <LuCopy size={20} />
-      {copied && (
-        <span className="absolute -top-6 left-1/2 w-16 -translate-x-1/2 rounded bg-black p-1 text-xs text-white shadow">
-          কপি হয়েছে!
-        </span>
-      )}
-    </button>
+    <div>
+      <div className="flex h-full justify-end">
+        <Button
+          onClick={handleCopy}
+          className="size-8 rounded-[6px] md:size-auto"
+        >
+          <span className="hidden xl:block">কপি</span>{' '}
+          {copied ? <BsClipboard2CheckFill /> : <BsClipboard2Fill />}
+        </Button>
+      </div>
+    </div>
   );
 };
 
