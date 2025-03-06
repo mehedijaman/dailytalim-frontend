@@ -6,6 +6,9 @@ import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
 import moment from 'moment-hijri';
 import useAllDate from '@/hooks/useAllDate';
+import { FiMinus, FiPlus } from 'react-icons/fi';
+import FontSize from './FontSize';
+import { useState } from 'react';
 const {
   formattedBanglaDate,
   formattedHijriDateInBangla,
@@ -13,6 +16,17 @@ const {
 } = useAllDate();
 
 const TodaysHadith = () => {
+
+  const [fontSize, setFontSize] = useState(18);
+
+  const increaseFontSize = () => {
+    if (fontSize < 30) setFontSize(fontSize + 2);
+  };
+
+  const decreaseFontSize = () => {
+    if (fontSize > 10) setFontSize(fontSize - 2);
+  };
+
   return (
     <main className="">
       <HadithHeader />
@@ -40,7 +54,7 @@ const TodaysHadith = () => {
           <div id="hadith" className="w-full">
             {/*Arabic Hadith */}
             <div className="text-right">
-              <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
+              <p className="mt-2 cursor-pointer text-2xl leading-relaxed" style={{ fontSize: `${fontSize}px` }}>
                 حَدَّثَنَا مُوسَى بْنُ عَبْدِ الرَّحْمَنِ الْكِنْدِيُّ
                 الْكُوفِيُّ، حَدَّثَنَا زَيْدُ بْنُ الْحُبَابِ، أَخْبَرَنَا
                 مُعَاوِيَةُ بْنُ صَالِحٍ، حَدَّثَنِي سُلَيْمُ بْنُ عَامِرٍ،
@@ -57,7 +71,7 @@ const TodaysHadith = () => {
             </div>
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
-              <p className="mt-2 cursor-pointer text-left text-lg leading-relaxed">
+              <p className="mt-2 cursor-pointer text-left text-lg leading-relaxed" style={{ fontSize: `${fontSize}px` }}>
                 আবূ উমামা (রাঃ) হতে বর্ণিত: <br />
                 আমি রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম)কে বিদায়
                 হাজ্জের ভাষণে বলতে শুনেছি, তিনি বলেছেনঃ তোমাদের প্রতিপালক আল্লাহ
@@ -96,7 +110,14 @@ const TodaysHadith = () => {
             </footer>
           </div>
         </div>
+        
       </div>
+
+      
+      
+      <FontSize fontSize={fontSize} increaseFontSize={increaseFontSize} decreaseFontSize={decreaseFontSize} />
+
+
     </main>
   );
 };
