@@ -35,8 +35,8 @@ const DownloadButton = () => {
   };
   return (
     <div onClick={handleDownloadHadithImage} className="flex justify-end">
-      <Button className="rounded-[6px]">
-        <span className="hidden md:block">ডাউনলোড</span> <FiDownload />{' '}
+      <Button className="size-8 rounded-[6px] md:size-auto">
+        <span className="hidden xl:block">ডাউনলোড</span> <FiDownload />{' '}
       </Button>
     </div>
   );

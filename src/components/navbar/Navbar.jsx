@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 //Icons import
 import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
-import { CiSearch } from 'react-icons/ci';
 import { SiDatefns } from 'react-icons/si';
 import { FaGithub } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 const Navbar = ({
   isSidebarOpen,
@@ -15,8 +15,16 @@ const Navbar = ({
   isRightSidebarOpen,
   setIsRightSidebarOpen,
 }) => {
+  const navLinks = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Blog', path: '/blog' },
+    { title: 'Contact', path: '/contact' },
+  ];
+  const pathname = usePathname();
+
   return (
-    <nav className="flex justify-between px-2 py-3 md:px-5">
+    <nav className="flex items-center justify-between px-2 py-3 md:px-5">
       <div className="flex items-center gap-2">
         <div
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -39,6 +47,17 @@ const Navbar = ({
           className="hidden rounded-[5px] object-cover md:block"
         />
         <h1 className="text-xl font-bold md:text-2xl"> ডেইলি তালিম </h1>
+      </div>
+      <div className="hidden gap-4 md:flex">
+        {navLinks.map((navLink, i) => (
+          <Link
+            key={i}
+            href={navLink.path}
+            className={`px-1 ${pathname === navLink.path && 'border-b border-dailyTalim-primary-500 font-semibold text-dailyTalim-primary-500'}`}
+          >
+            {navLink.title}
+          </Link>
+        ))}
       </div>
       <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
         <ThemeControl />
