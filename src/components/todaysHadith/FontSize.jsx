@@ -5,44 +5,76 @@ const FontSize = ({ fontSize, setFontSize }) => {
     <div className="flex flex-col gap-4 p-4 text-white">
       {/* Arabic Font Size */}
       <div className="flex flex-col gap-2">
-        <span className="text-lg text-black">আরবি ফন্ট সাইজ</span>
+        <div className="flex items-center justify-between">
+          <span className="text-base text-black">আরবি ফন্ট সাইজ</span>
+          <span className="text-green-500">{fontSize.arabic}</span>
+        </div>
         <Range
           step={1}
           min={10}
           max={30}
           values={[fontSize.arabic]}
-          onChange={(values) => setFontSize((prev) => ({ ...prev, arabic: values[0] }))}
-          renderTrack={({ props, children }) => (
-            <div {...props} className="h-2 bg-gray-700 rounded-lg">
-              {children}
-            </div>
-          )}
+          onChange={values =>
+            setFontSize(prev => ({ ...prev, arabic: values[0] }))
+          }
+          renderTrack={({ props, children }) => {
+            const percentage = ((fontSize.arabic - 10) / (30 - 10)) * 100;
+            return (
+              <div
+                {...props}
+                className="h-1 rounded-lg"
+                style={{
+                  background: `linear-gradient(to right, #16db65 ${percentage}%, gray ${percentage}%)`
+                }}
+              >
+                {children}
+              </div>
+            );
+          }}
           renderThumb={({ props }) => (
-            <div {...props} className="w-4 h-4 bg-green-500 rounded-full cursor-pointer" />
+            <div
+              {...props}
+              className="h-4 w-4 cursor-pointer rounded-full bg-green-400"
+            />
           )}
         />
-        <span className="text-green-500">{fontSize.arabic}</span>
       </div>
 
       {/* Bangla Translation Font Size */}
-      <div className="flex flex-col gap-2">
-        <span className="text-lg text-black">অনুবাদ ফন্ট সাইজ</span>
+      <div className="flex flex-col gap-2 mt-2">
+        <div className="flex items-center justify-between">
+          <span className="text-base text-black">অনুবাদ ফন্ট সাইজ</span>
+          <span className="text-green-500">{fontSize.bangla}</span>
+        </div>
         <Range
           step={1}
           min={10}
           max={30}
           values={[fontSize.bangla]}
-          onChange={(values) => setFontSize((prev) => ({ ...prev, bangla: values[0] }))}
-          renderTrack={({ props, children }) => (
-            <div {...props} className="h-2 bg-gray-700 rounded-lg">
-              {children}
-            </div>
-          )}
+          onChange={values =>
+            setFontSize(prev => ({ ...prev, bangla: values[0] }))
+          }
+          renderTrack={({ props, children }) => {
+            const percentage = ((fontSize.bangla - 10) / (30 - 10)) * 100;
+            return (
+              <div
+                {...props}
+                className="h-1 rounded-lg"
+                style={{
+                  background: `linear-gradient(to right, #16db65 ${percentage}%, gray ${percentage}%)`
+                }}
+              >
+                {children}
+              </div>
+            );
+          }}
           renderThumb={({ props }) => (
-            <div {...props} className="w-4 h-4 bg-green-500 rounded-full cursor-pointer" />
+            <div
+              {...props}
+              className="h-4 w-4 cursor-pointer rounded-full bg-green-400"
+            />
           )}
         />
-        <span className="text-green-500">{fontSize.bangla}</span>
       </div>
     </div>
   );
