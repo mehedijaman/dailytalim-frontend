@@ -8,7 +8,7 @@ const ThemeControl = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div>
+    <div suppressHydrationWarning>
       <div
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 dark:bg-dailyTalim-border-dark"
