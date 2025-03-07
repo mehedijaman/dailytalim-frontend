@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 
 const useWindowWidth = () => {
-  const storedWidth = localStorage.getItem('width');
-  const [width, setWidth] = useState(storedWidth);
+  const [width, setWidth] = useState(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.getItem('width') || window.innerWidth;
+    }
+  });
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Prevents SSR errors
-
     const handleResize = async () => {
       localStorage.setItem('width', window.innerWidth);
     };
