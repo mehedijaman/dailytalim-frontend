@@ -41,7 +41,7 @@ const MainLayout = ({ children }) => {
           >
             <div className="mx-auto my-8 max-w-4xl">{children}</div>
           </div>
-          <aside className="z-50 md:pt-16">
+          <aside className="z-40 md:pt-16">
             <RightSidebar
               isRightSidebarOpen={isRightSidebarOpen}
               setIsRightSidebarOpen={setIsRightSidebarOpen}
