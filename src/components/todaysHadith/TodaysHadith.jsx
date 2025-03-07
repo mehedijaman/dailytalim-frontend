@@ -1,11 +1,11 @@
 'use client';
 import HadithHeader from './HadithHeader';
-import ShareButton from './ShareButton';
 import { IoBookOutline } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
-import moment from 'moment-hijri';
 import useAllDate from '@/hooks/useAllDate';
+import useFontResize from '@/hooks/useFontResize';
+
 const {
   formattedBanglaDate,
   formattedHijriDateInBangla,
@@ -13,6 +13,8 @@ const {
 } = useAllDate();
 
 const TodaysHadith = () => {
+  const { arabicFontSize, banglaFontSize } = useFontResize();
+
   return (
     <main className="">
       <HadithHeader />
@@ -27,7 +29,7 @@ const TodaysHadith = () => {
             className="hidden rounded-t-md px-5 pt-4 text-dailyTalim-primary-500"
           >
             <div className="flex items-center justify-center gap-4 border-b border-dailyTalim-primary-500 px-5 pb-2">
-              <h2 className="text-2xl font-semibold">আজকের তালিম</h2>
+              <h2 className="text-xl font-semibold md:text-2xl">আজকের তালিম</h2>
               <div className="border-l-2 border-dailyTalim-primary-500 pl-4">
                 <p className="font-semibold">{formattedHijriDateInBangla}</p>
                 <p className="flex gap-2">
@@ -40,7 +42,10 @@ const TodaysHadith = () => {
           <div id="hadith" className="w-full">
             {/*Arabic Hadith */}
             <div className="text-right">
-              <p className="mt-2 cursor-pointer text-2xl leading-relaxed">
+              <p
+                className="mt-2 cursor-pointer text-2xl leading-relaxed"
+                style={{ fontSize: `${arabicFontSize}px` }}
+              >
                 حَدَّثَنَا مُوسَى بْنُ عَبْدِ الرَّحْمَنِ الْكِنْدِيُّ
                 الْكُوفِيُّ، حَدَّثَنَا زَيْدُ بْنُ الْحُبَابِ، أَخْبَرَنَا
                 مُعَاوِيَةُ بْنُ صَالِحٍ، حَدَّثَنِي سُلَيْمُ بْنُ عَامِرٍ،
@@ -57,7 +62,10 @@ const TodaysHadith = () => {
             </div>
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
-              <p className="mt-2 cursor-pointer text-left text-lg leading-relaxed">
+              <p
+                className="mt-2 cursor-pointer text-left text-lg leading-relaxed"
+                style={{ fontSize: `${banglaFontSize}px` }}
+              >
                 আবূ উমামা (রাঃ) হতে বর্ণিত: <br />
                 আমি রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম)কে বিদায়
                 হাজ্জের ভাষণে বলতে শুনেছি, তিনি বলেছেনঃ তোমাদের প্রতিপালক আল্লাহ

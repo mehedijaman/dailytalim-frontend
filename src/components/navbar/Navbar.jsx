@@ -16,10 +16,10 @@ const Navbar = ({
   setIsRightSidebarOpen,
 }) => {
   const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'About', path: '/about' },
-    { title: 'Blog', path: '/blog' },
-    { title: 'Contact', path: '/contact' },
+    { title: 'হোম', path: '/' },
+    { title: 'এবাউট', path: '/about' },
+    { title: 'ব্লগ', path: '/blog' },
+    { title: 'কন্টাক', path: '/contact' },
   ];
   const pathname = usePathname();
 

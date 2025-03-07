@@ -3,9 +3,18 @@
 import { IoMdSunny } from 'react-icons/io';
 import { IoMoon } from 'react-icons/io5';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const ThemeControl = () => {
   const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div>
