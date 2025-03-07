@@ -1,24 +1,30 @@
+import useFontResize from '@/hooks/useFontResize';
 import { Range } from 'react-range';
 
-const FontSize = ({ fontSize, setFontSize }) => {
+const FontSize = () => {
+  const {
+    arabicFontSize,
+    setArabicFontSize,
+    banglaFontSize,
+    setBanglaFontSize,
+  } = useFontResize();
+
   return (
     <div className="flex flex-col gap-4 p-4 text-white">
       {/* Arabic Font Size */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <span className="text-base text-black">আরবি ফন্ট সাইজ</span>
-          <span className="text-green-500">{fontSize.arabic}</span>
+          <span className="text-green-500">{arabicFontSize}</span>
         </div>
         <Range
           step={1}
-          min={10}
-          max={30}
-          values={[fontSize.arabic]}
-          onChange={values =>
-            setFontSize(prev => ({ ...prev, arabic: values[0] }))
-          }
+          min={22}
+          max={42}
+          values={[arabicFontSize]}
+          onChange={values => setArabicFontSize(values[0])}
           renderTrack={({ props, children }) => {
-            const percentage = ((fontSize.arabic - 10) / (30 - 10)) * 100;
+            const percentage = ((arabicFontSize - 22) / (42 - 22)) * 100;
             const { key, ...restProps } = props;
             return (
               <div
@@ -50,18 +56,16 @@ const FontSize = ({ fontSize, setFontSize }) => {
       <div className="mt-2 flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <span className="text-base text-black">অনুবাদ ফন্ট সাইজ</span>
-          <span className="text-green-500">{fontSize.bangla}</span>
+          <span className="text-green-500">{banglaFontSize}</span>
         </div>
         <Range
           step={1}
-          min={10}
-          max={30}
-          values={[fontSize.bangla]}
-          onChange={values =>
-            setFontSize(prev => ({ ...prev, bangla: values[0] }))
-          }
+          min={18}
+          max={32}
+          values={[banglaFontSize]}
+          onChange={values => setBanglaFontSize(values[0])}
           renderTrack={({ props, children }) => {
-            const percentage = ((fontSize.bangla - 10) / (30 - 10)) * 100;
+            const percentage = ((banglaFontSize - 18) / (32 - 18)) * 100;
             const { key, ...restProps } = props;
             return (
               <div
