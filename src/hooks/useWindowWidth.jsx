@@ -4,9 +4,9 @@ const useWindowWidth = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Prevents SSR errors
-
-    const handleResize = () => setWidth(window.innerWidth);
+    const handleResize = async () => {
+      setWidth(window.innerWidth);
+    };
 
     setWidth(window.innerWidth);
 
