@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 
 const useWindowWidth = () => {
-  const [width, setWidth] = useState(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.getItem('width') || window.innerWidth;
-    }
-  });
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = async () => {
-      localStorage.setItem('width', window.innerWidth);
+      setWidth(window.innerWidth);
     };
-    localStorage.setItem('width', window.innerWidth);
 
     setWidth(window.innerWidth);
 
