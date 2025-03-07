@@ -5,7 +5,6 @@ import Date from './Date';
 import PrayerTimeTable from './PrayerTimeTable';
 import { IoMdClose } from 'react-icons/io';
 import FontSize from '../todaysHadith/FontSize';
-import { useState } from 'react';
 import useFontSize from '@/hooks/useFontSize';
 
 const RightSidebar = ({ isRightSidebarOpen, setIsRightSidebarOpen }) => {
