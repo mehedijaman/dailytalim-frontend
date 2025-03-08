@@ -1,7 +1,7 @@
 import useFontResize from '@/hooks/useFontResize';
 import { Range } from 'react-range';
 
-const FontSize = () => {
+const FontResize = () => {
   const {
     arabicFontSize,
     setArabicFontSize,
@@ -17,7 +17,7 @@ const FontSize = () => {
       {/* Arabic Font Size */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold">আরবি ফন্ট সাইজ</span>
+          <span className="text-sm">আরবি ফন্ট সাইজ</span>
           <span className="text-green-500">{arabicFontSize}</span>
         </div>
         <div className="flex items-center gap-2">
@@ -65,20 +65,20 @@ const FontSize = () => {
         </div>
       </div>
       {/* Bangla Translation Font Size */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold">অনুবাদ ফন্ট সাইজ</span>
+          <span className="text-sm">অনুবাদ ফন্ট সাইজ</span>
           <span className="text-green-500">{banglaFontSize}</span>
         </div>
         <div className="flex items-center gap-2">
           <Range
             step={1}
-            min={18}
+            min={14}
             max={32}
             values={[banglaFontSize]}
             onChange={values => setBanglaFontSize(values[0])}
             renderTrack={({ props, children }) => {
-              const percentage = ((banglaFontSize - 18) / (32 - 18)) * 100;
+              const percentage = ((banglaFontSize - 14) / (32 - 14)) * 100;
               const { key, ...restProps } = props;
               return (
                 <div
@@ -118,4 +118,4 @@ const FontSize = () => {
   );
 };
 
-export default FontSize;
+export default FontResize;
