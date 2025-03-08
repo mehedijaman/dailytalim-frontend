@@ -8,13 +8,9 @@ import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
 import { SiDatefns } from 'react-icons/si';
 import { usePathname } from 'next/navigation';
 import { IoSettingsSharp } from 'react-icons/io5';
+import useSidebarsContext from '@/hooks/useSidebarsContext';
 
-const Navbar = ({
-  isSidebarOpen,
-  setIsSidebarOpen,
-  isRightSidebarOpen,
-  setIsRightSidebarOpen,
-}) => {
+const Navbar = () => {
   const navLinks = [
     { title: 'হোম', path: '/' },
     { title: 'এবাউট', path: '/about' },
@@ -22,6 +18,13 @@ const Navbar = ({
     { title: 'কন্টাক', path: '/contact' },
   ];
   const pathname = usePathname();
+
+  const {
+    isSidebarOpen,
+    setIsSidebarOpen,
+    isRightSidebarOpen,
+    setIsRightSidebarOpen,
+  } = useSidebarsContext();
 
   return (
     <nav className="flex items-center justify-between px-2 py-3 md:px-5">
