@@ -24,6 +24,8 @@ const Navbar = () => {
     setIsSidebarOpen,
     isRightSidebarOpen,
     setIsRightSidebarOpen,
+    isSettingBarOpen,
+    setIsSettingBarOpen,
   } = useSidebarsContext();
 
   return (
@@ -65,14 +67,17 @@ const Navbar = () => {
       <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
         <ThemeControl />
 
-        <div className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark">
-          <IoSettingsSharp size={20} />
-        </div>
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
           className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark md:hidden"
         >
           <SiDatefns size={20} />
+        </div>
+        <div
+          onClick={() => setIsSettingBarOpen(!isSettingBarOpen)}
+          className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark"
+        >
+          <IoSettingsSharp size={20} />
         </div>
       </div>
     </nav>
