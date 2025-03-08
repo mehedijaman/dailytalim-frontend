@@ -6,10 +6,18 @@ const SideBarsProvider = ({ children }) => {
   const width = useWindowWidth();
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
+  const [isSettingBarOpen, setIsSettingBarOpen] = useState(false);
 
   useEffect(() => {
-    setIsRightSidebarOpen(width >= 767);
+    if (isSettingBarOpen) {
+      setIsRightSidebarOpen(false);
+    } else {
+      setIsRightSidebarOpen(width >= 767);
+    }
+  }, [isSettingBarOpen, width]);
+
+  useEffect(() => {
     setIsSidebarOpen(width >= 1024);
   }, [width]);
 
@@ -18,6 +26,8 @@ const SideBarsProvider = ({ children }) => {
     setIsSidebarOpen,
     isRightSidebarOpen,
     setIsRightSidebarOpen,
+    isSettingBarOpen,
+    setIsSettingBarOpen,
   };
   return (
     <SidebarContext.Provider value={sidebar}>

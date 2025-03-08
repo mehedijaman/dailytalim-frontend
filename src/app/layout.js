@@ -30,12 +30,12 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <main>
-            <FontResizeProvider>
-              <SideBarsProvider>
+            <SideBarsProvider>
+              <FontResizeProvider>
                 {children}
                 <SettingBar />
-              </SideBarsProvider>
-            </FontResizeProvider>
+              </FontResizeProvider>
+            </SideBarsProvider>
           </main>
         </ThemeProvider>
         <Toaster />
