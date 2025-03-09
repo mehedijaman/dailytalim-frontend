@@ -66,16 +66,13 @@ const PrayerTimeTable = () => {
     .toLocaleTimeString()
     .replace(':00', '');
   return (
-    <div className="text-dailyTalim-black">
-      <div className="rounded-lg bg-dailyTalim-primary-200 p-4">
+    <div className="text-black">
+      <div className="bg-primary-200 rounded-lg p-4">
         <h4 className="text-center font-medium">নামাজের সময়সূচি</h4>
         <Table>
           <TableBody>
             {formattedPrayerTimes.map(prayersTime => (
-              <TableRow
-                key={prayersTime.name}
-                className="border-dailyTalim-mutedGray"
-              >
+              <TableRow key={prayersTime.name} className="border-muted">
                 <TableCell className="font-medium">
                   {prayersTime.name}
                 </TableCell>
@@ -89,10 +86,10 @@ const PrayerTimeTable = () => {
         </Table>
       </div>
       <div className="mt-3 space-y-3">
-        <div className="rounded-lg bg-dailyTalim-primary-200 px-4 py-2">
+        <div className="bg-primary-200 rounded-lg px-4 py-2">
           সেহেরী শেষ - {sehriEndTime}{' '}
         </div>
-        <div className="rounded-lg bg-dailyTalim-primary-200 px-4 py-2">
+        <div className="bg-primary-200 rounded-lg px-4 py-2">
           ইফতার - {iftarTime}{' '}
         </div>
       </div>

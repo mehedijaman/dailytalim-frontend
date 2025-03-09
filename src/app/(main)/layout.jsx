@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
 
   return (
     <main>
-      <header className="fixed z-40 h-16 w-full border-b bg-white dark:border-dailyTalim-border-dark dark:bg-dailyTalim-darkBg lg:z-50">
+      <header className="border-border-color fixed z-40 h-16 w-full border-b bg-background lg:z-50">
         <Navbar />
       </header>
       <section className="flex gap-4">

@@ -11,35 +11,28 @@ export default {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          50: 'hsl(var(--primary-50))',
+          100: 'hsl(var(--primary-100))',
+          200: 'hsl(var(--primary-200))',
+          300: 'hsl(var(--primary-300))',
+          400: 'hsl(var(--primary-400))',
+          500: 'hsl(var(--primary-500))',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          1: 'hsl(var(--secondary-1))',
+          2: 'hsl(var(--secondary-2))',
+          3: 'hsl(var(--secondary-3))',
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
+        'text-color': 'hsl(var(--text))',
+
+        muted: 'hsl(var(--muted))',
+
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        border: 'hsl(var(--border))',
+        'border-color': 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
@@ -49,29 +42,7 @@ export default {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
         },
-        dailyTalim: {
-          primary: {
-            50: '#effef4',
-            100: '#d9ffe7',
-            200: '#b6fcd1',
-            300: '#7ef7ae',
-            400: '#3eea83',
-            500: '#16db65',
-          }, // Vibrant green for primary actions
-          black: '#020202', // Near-black for text or dark backgrounds
-          darkGreen: '#058C42', // Darker green for secondary elements
-          deepGreen: '#04471C', // Even darker green for borders/muted areas
-          richGreen: '#0D2818', // Deep, rich green for backgrounds/subtle accents
-          mutedGray: '#737373', // Medium gray for muted text, borders, or icons
-          darkBg: '#101720',
-          sidebar: {
-            light: '#f5f5f5',
-            dark: '#18212f',
-          },
-          border: {
-            dark: '#334155',
-          },
-        },
+        'sidebar-bg': 'hsl(var(--sidebar))',
       },
     },
   },

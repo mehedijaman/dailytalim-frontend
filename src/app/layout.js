@@ -24,9 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="bn" suppressHydrationWarning>
       <body className={`${anekBangla.className} antialiased`}>
         <ThemeProvider
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem={true}
           attribute="class"
+          themes={['light', 'dark', 'warm']}
           disableTransitionOnChange
         >
           <main>
