@@ -1,15 +1,11 @@
 import { BsTwitterX } from 'react-icons/bs';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaGithub,
-} from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <div className='border-t-4 border-b-4 pb-8 rounded-2xl border-dailyTalim-primary-500'>
-      <div className="ml-0 mr-0 lg:ml-4 lg:mr-4   mt-8 ">
-        <div className="flex w-full ml-4 lg:ml-0 flex-col gap-6 ">
+    <div className="border-primary-500 rounded-2xl border-b-4 border-t-4 pb-8">
+      <div className="ml-0 mr-0 mt-8 lg:ml-4 lg:mr-4">
+        <div className="ml-4 flex w-full flex-col gap-6 lg:ml-0">
           <div className="">
             <h1 className="mb-2 text-center text-3xl font-bold">
               যোগাযোগ করুন
@@ -20,9 +16,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="w-full    mt-8 " >
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label className="block col-span-2 md:col-span-1">
+        <div className="mt-8 w-full">
+          <form className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <label className="col-span-2 block md:col-span-1">
               <span className="">পুরো নাম</span>
               <input
                 type="text"
@@ -30,7 +26,7 @@ const Contact = () => {
                 className="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#16db65]"
               />
             </label>
-            <label className="block col-span-2 md:col-span-1">
+            <label className="col-span-2 block md:col-span-1">
               <span className="">ইমেইল ঠিকানা</span>
               <input
                 type="email"
@@ -38,7 +34,7 @@ const Contact = () => {
                 className="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#16db65]"
               />
             </label>
-            <label className="block col-span-2 md:col-span-1">
+            <label className="col-span-2 block md:col-span-1">
               <span className="">ফোন</span>
               <input
                 type="text"
@@ -47,9 +43,9 @@ const Contact = () => {
               />
             </label>
 
-            <label className="block col-span-2 md:col-span-1">
+            <label className="col-span-2 block md:col-span-1">
               <span className="">প্রকার</span>
-              <select className="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 h-11 focus:ring-[#16db65]">
+              <select className="mt-1 h-11 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#16db65]">
                 <option value="question">জিজ্ঞাসা</option>
                 <option value="feedback">মতামত</option>
                 <option value="suggestion">পরামর্শ</option>
@@ -80,48 +76,50 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="flex justify-center mt-8 gap-6">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              className="text-[#0866ff] transition hover:text-green-600"
-            >
-              <FaFacebook className="text-3xl" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              className=" transition hover:text-green-600"
-            >
-              <BsTwitterX className="text-3xl" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              className="text-[#e1306c] transition hover:text-green-600"
-            >
-              <FaInstagram className="text-3xl" />
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              className=" transition hover:text-green-600"
-            >
-              <FaGithub className="text-3xl" />
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.example"
-              target="_blank"
-              className="text-[#4285F4] transition hover:text-green-600"
-            >
-
-              <img src="https://i.postimg.cc/X7dZYZHh/google-play.png" className="h-7 w-7" alt="" />
-            </a>
-          </div>
+        <div className="mt-8 flex justify-center gap-6">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            className="text-[#0866ff] transition hover:text-green-600"
+          >
+            <FaFacebook className="text-3xl" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            className="transition hover:text-green-600"
+          >
+            <BsTwitterX className="text-3xl" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            className="text-[#e1306c] transition hover:text-green-600"
+          >
+            <FaInstagram className="text-3xl" />
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            className="transition hover:text-green-600"
+          >
+            <FaGithub className="text-3xl" />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.example"
+            target="_blank"
+            className="text-[#4285F4] transition hover:text-green-600"
+          >
+            <img
+              src="https://i.postimg.cc/X7dZYZHh/google-play.png"
+              className="h-7 w-7"
+              alt=""
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
 };
-
 
 export default Contact;

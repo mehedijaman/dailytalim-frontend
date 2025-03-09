@@ -26,14 +26,14 @@ const ThemeControl = () => {
 
   return (
     <div className="py-4">
-      <div className="flex cursor-pointer justify-between rounded-full bg-dailyTalim-primary-100 px-2 py-1 dark:bg-dailyTalim-border-dark">
+      <div className="bg-secondary-1 flex cursor-pointer justify-between rounded-full px-2 py-1">
         {themes.map((t, i) => (
           <p
             onClick={() => {
               setTheme(t.name);
             }}
             key={i}
-            className={`${theme === t.name && 'bg-dailyTalim-primary-500 text-white dark:bg-dailyTalim-darkBg'} rounded-full px-2 py-1 text-sm`}
+            className={`${theme === t.name && 'bg-secondary-3 text-white'} rounded-full px-2 py-1 text-sm`}
           >
             {t.title}
           </p>

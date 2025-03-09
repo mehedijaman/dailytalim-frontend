@@ -21,16 +21,16 @@ const TodaysHadith = () => {
       <div className="flex justify-center">
         <div
           id="hadith-wrapper"
-          className="overflow-hidden rounded-xl bg-white p-2 dark:bg-dailyTalim-darkBg"
+          className="overflow-hidden rounded-xl bg-background p-2"
         >
           {/* Hidden heading: This is diplayed on the hadith photo card */}
           <div
             id="hadith-header"
-            className="hidden rounded-t-md px-5 pt-4 text-dailyTalim-primary-500"
+            className="text-primary-500 hidden rounded-t-md px-5 pt-4"
           >
-            <div className="flex items-center justify-center gap-4 border-b border-dailyTalim-primary-500 px-5 pb-2">
+            <div className="border-primary-500 flex items-center justify-center gap-4 border-b px-5 pb-2">
               <h2 className="text-xl font-semibold md:text-2xl">আজকের তালিম</h2>
-              <div className="border-l-2 border-dailyTalim-primary-500 pl-4">
+              <div className="border-primary-500 border-l-2 pl-4">
                 <p className="font-semibold">{formattedHijriDateInBangla}</p>
                 <p className="flex gap-2">
                   <span>{formattedBanglaDate}</span> |{' '}
@@ -85,7 +85,7 @@ const TodaysHadith = () => {
 
             {/* Hidden footer: This is displayed on hadith photo card*/}
             <footer id="hadith-footer" className="hidden">
-              <div className="mt-4 flex items-center gap-3 border-t border-dailyTalim-primary-500 px-2 pb-1 pt-2 font-semibold text-dailyTalim-primary-500">
+              <div className="border-primary-500 text-primary-500 mt-4 flex items-center gap-3 border-t px-2 pb-1 pt-2 font-semibold">
                 <p className="flex items-center gap-2">
                   <IoBookOutline size={20} />
                   DailyTalim
