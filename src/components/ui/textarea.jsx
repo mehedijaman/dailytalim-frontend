@@ -6,7 +6,7 @@ const Textarea = React.forwardRef(({ className, ...props }, ref) => {
     <textarea
       ref={ref}
       className={cn(
-        "block w-full rounded-md border border-input px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:text-base bg-transparent",
+        "block w-full rounded-md border border-input px-3 py-2 text-sm shadow-sm focus:border-primary  focus:ring-2 focus:ring-primary sm:text-base bg-transparent",
         className
       )}
       {...props}
