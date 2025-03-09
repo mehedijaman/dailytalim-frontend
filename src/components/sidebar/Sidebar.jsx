@@ -16,12 +16,12 @@ const Sidebar = () => {
         aria-hidden={!isSidebarOpen}
       />
       <div
-        className={`h-screen w-72 overflow-y-auto border-r bg-dailyTalim-sidebar-light dark:border-dailyTalim-border-dark dark:bg-dailyTalim-sidebar-dark ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
+        className={`border-border-color bg-sidebar-bg h-screen w-72 overflow-y-auto border-r ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
         <div className="p-6">
-          <div className="cursor-pointer rounded-md bg-dailyTalim-primary-100 px-4 py-2 dark:bg-dailyTalim-border-dark">
+          <div className="bg-secondary-1 cursor-pointer rounded-md px-4 py-2">
             <h5 className="font-semibold">সহিহ বুখারি</h5>
-            <p className="text-sm text-dailyTalim-mutedGray">
+            <p className="text-sm text-muted">
               মোট হাদিস <span>৭৫৪৪</span>
             </p>
           </div>

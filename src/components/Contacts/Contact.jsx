@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { BsTwitterX } from 'react-icons/bs';
 import { FaFacebook, FaInstagram, FaGithub } from 'react-icons/fa';
@@ -17,19 +17,14 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'lucide-react';
 
 const Contact = () => {
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    reset
-  } = useForm();
+  const { register, handleSubmit, setValue, reset } = useForm();
 
   const onSubmit = data => {
     console.log('Form Data:', data);
     reset();
   };
   return (
-    <div className="rounded-2xl border-b-4 border-t-4 border-dailyTalim-primary-500 pb-8">
+    <div className="border-primary-500 rounded-2xl border-b-4 border-t-4 pb-8">
       <div className="ml-2 mr-2 mt-8 lg:ml-4 lg:mr-4">
         <div className="ml-4 flex w-full flex-col gap-6 lg:ml-0">
           <div>
@@ -43,7 +38,10 @@ const Contact = () => {
         </div>
 
         <div className="mt-8 w-full">
-          <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
+          >
             <div className="col-span-2 md:col-span-1">
               <Label>পুরো নাম</Label>
               <Input
@@ -79,7 +77,7 @@ const Contact = () => {
             </div>
             <div className="col-span-2 md:col-span-1">
               <Label>প্রকার</Label>
-              <Select required onValueChange={(value) => setValue("type", value)}>
+              <Select required onValueChange={value => setValue('type', value)}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="একটি নির্বাচন করুন" />
                 </SelectTrigger>
