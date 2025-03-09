@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <div
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="cursor-pointer rounded-[5px] bg-dailyTalim-primary-100 p-2 text-dailyTalim-mutedGray transition-colors duration-200 hover:bg-dailyTalim-primary-200 dark:bg-dailyTalim-border-dark dark:text-white"
+          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-[5px] p-2 text-muted transition-colors duration-200 dark:text-white"
           title="Toggle Sidebar"
         >
           <div>
@@ -57,22 +57,22 @@ const Navbar = () => {
           <Link
             key={i}
             href={navLink.path}
-            className={`px-1 ${pathname === navLink.path && 'border-b border-dailyTalim-primary-500 font-semibold text-dailyTalim-primary-500'}`}
+            className={`px-1 ${pathname === navLink.path && 'border-primary-500 text-primary-500 border-b font-semibold'}`}
           >
             {navLink.title}
           </Link>
         ))}
       </div>
-      <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
+      <div className="flex items-center gap-2 text-muted dark:text-white">
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
-          className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark md:hidden"
+          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-full p-2 md:hidden"
         >
           <SiDatefns size={20} />
         </div>
         <div
           onClick={() => setIsSettingBarOpen(!isSettingBarOpen)}
-          className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark"
+          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-full p-2"
         >
           <IoSettingsSharp size={20} />
         </div>
