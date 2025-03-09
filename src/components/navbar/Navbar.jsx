@@ -6,15 +6,11 @@ import Link from 'next/link';
 //Icons import
 import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
 import { SiDatefns } from 'react-icons/si';
-import { FaGithub } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
+import { IoSettingsSharp } from 'react-icons/io5';
+import useSidebarsContext from '@/hooks/useSidebarsContext';
 
-const Navbar = ({
-  isSidebarOpen,
-  setIsSidebarOpen,
-  isRightSidebarOpen,
-  setIsRightSidebarOpen,
-}) => {
+const Navbar = () => {
   const navLinks = [
     { title: 'হোম', path: '/' },
     { title: 'ব্লগ', path: '/blog' },
@@ -22,6 +18,15 @@ const Navbar = ({
     { title: 'যোগাযোগ', path: '/contact' },
   ];
   const pathname = usePathname();
+
+  const {
+    isSidebarOpen,
+    setIsSidebarOpen,
+    isRightSidebarOpen,
+    setIsRightSidebarOpen,
+    isSettingBarOpen,
+    setIsSettingBarOpen,
+  } = useSidebarsContext();
 
   return (
     <nav className="flex items-center justify-between px-2 py-3 md:px-5">
@@ -61,18 +66,18 @@ const Navbar = ({
       </div>
       <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
         <ThemeControl />
-        <Link
-          href="https://github.com/mehedijaman/dailytalim-frontend"
-          target="_blank"
-          className="rounded-full bg-dailyTalim-primary-100 p-2 dark:bg-dailyTalim-border-dark"
-        >
-          <FaGithub size={20} />
-        </Link>
+
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
           className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark md:hidden"
         >
           <SiDatefns size={20} />
+        </div>
+        <div
+          onClick={() => setIsSettingBarOpen(!isSettingBarOpen)}
+          className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark"
+        >
+          <IoSettingsSharp size={20} />
         </div>
       </div>
     </nav>
