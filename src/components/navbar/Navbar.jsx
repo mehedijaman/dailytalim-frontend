@@ -17,9 +17,9 @@ const Navbar = ({
 }) => {
   const navLinks = [
     { title: 'হোম', path: '/' },
-    { title: 'এবাউট', path: '/about' },
     { title: 'ব্লগ', path: '/blog' },
-    { title: 'কন্টাক', path: '/contact' },
+    { title: 'আমাদের সম্পর্কে', path: '/about' },
+    { title: 'যোগাযোগ', path: '/contact' },
   ];
   const pathname = usePathname();
 
