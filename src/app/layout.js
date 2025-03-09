@@ -2,6 +2,9 @@ import { Anek_Bangla } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
+import FontResizeProvider from '@/context/FontResizeContext';
+import SettingBar from '@/components/settingBar/SettingBar';
+import SideBarsProvider from '@/context/SideBarsContext';
 
 const anekBangla = Anek_Bangla({
   variable: '--anek-bangla',
@@ -26,7 +29,14 @@ export default function RootLayout({ children }) {
           attribute="class"
           disableTransitionOnChange
         >
-          {children}
+          <main>
+            <SideBarsProvider>
+              <FontResizeProvider>
+                {children}
+                <SettingBar />
+              </FontResizeProvider>
+            </SideBarsProvider>
+          </main>
         </ThemeProvider>
         <Toaster />
       </body>

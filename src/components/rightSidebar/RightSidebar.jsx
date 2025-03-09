@@ -1,14 +1,13 @@
 'use client';
-
 import useWindowWidth from '@/hooks/useWindowWidth';
 import Date from './Date';
 import PrayerTimeTable from './PrayerTimeTable';
 import { IoMdClose } from 'react-icons/io';
-import useFontResize from '@/hooks/useFontResize';
-import FontSize from '../todaysHadith/FontSize';
+import useSidebarsContext from '@/hooks/useSidebarsContext';
 
-const RightSidebar = ({ isRightSidebarOpen, setIsRightSidebarOpen }) => {
+const RightSidebar = () => {
   const width = useWindowWidth();
+  const { isRightSidebarOpen, setIsRightSidebarOpen } = useSidebarsContext();
 
   return (
     <div
@@ -20,7 +19,6 @@ const RightSidebar = ({ isRightSidebarOpen, setIsRightSidebarOpen }) => {
         </button>
       </div>
       <Date />
-      <FontSize />
       <section>
         <PrayerTimeTable />
       </section>

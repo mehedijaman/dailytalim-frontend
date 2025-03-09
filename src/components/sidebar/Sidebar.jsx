@@ -1,6 +1,7 @@
-import React from 'react';
+import useSidebarsContext from '@/hooks/useSidebarsContext';
 
-const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const Sidebar = () => {
+  const { isSidebarOpen, setIsSidebarOpen } = useSidebarsContext();
   return (
     <div
       className={`${!isSidebarOpen && 'pointer-events-none'} fixed flex h-screen`}
