@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import ThemeControl from './ThemeControl';
 import Link from 'next/link';
 
 //Icons import
@@ -65,8 +64,6 @@ const Navbar = () => {
         ))}
       </div>
       <div className="flex items-center gap-2 text-dailyTalim-mutedGray dark:text-white">
-        <ThemeControl />
-
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
           className="cursor-pointer rounded-full bg-dailyTalim-primary-100 p-2 hover:bg-dailyTalim-primary-100 dark:bg-dailyTalim-border-dark md:hidden"
