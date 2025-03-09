@@ -14,13 +14,13 @@ const NavBarBottom = () => {
   ];
   const pathname = usePathname();
   return (
-    <div className="fixed -bottom-1 h-16 w-full border-t bg-white dark:border-dailyTalim-border-dark dark:bg-dailyTalim-darkBg md:hidden">
+    <div className="border-border-color fixed -bottom-1 h-16 w-full border-t bg-background md:hidden">
       <div className="flex h-full items-center justify-around">
         {navLinks.map((navLink, i) => (
           <Link
             key={i}
             href={navLink.path}
-            className={`px-1 ${pathname === navLink.path && 'font-semibold text-dailyTalim-primary-500'}`}
+            className={`px-1 ${pathname === navLink.path && 'text-primary-500 font-semibold'}`}
           >
             {navLink.icon}
           </Link>

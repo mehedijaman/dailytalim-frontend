@@ -14,3 +14,29 @@
 .dark:root {
   background: #101720;
 }
+
+:root {
+  --background: 0, 0%, 100%;
+  --primary-500: 144, 82%, 47%;
+  --primary-400: 144, 80%, 58%;
+  --primary-300: 144, 88%, 73%;
+  --primary-200: 143, 92%, 85%;
+  --primary-100: 142, 100%, 93%;
+  --primary-50: 140, 88%, 97%;
+  --secondary-3: 144, 82%, 47%;
+  --secondary-2: 143, 92%, 85%;
+  --secondary-1: 142, 100%, 93%;
+  --border: 220, 13%, 91%;
+  --text: 0, 0%, 1%;
+  --muted: 0, 0%, 45%;
+  --sidebar: 0, 0%, 96%;
+}
+.dark {
+  --background: 214, 33%, 9%;
+  --secondary-3: 221, 23%, 16%;
+  --secondary-2: 216, 23%, 24%;
+  --secondary-1: 215, 25%, 27%;
+  --border: 215, 25%, 27%;
+  --text: 0, 0%, 100%;
+  --sidebar: 217, 32%, 14%;
+}
