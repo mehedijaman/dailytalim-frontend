@@ -59,7 +59,7 @@ const ShareButton = () => {
       </div>
 
       {showOptions && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed p-4 md:p-0  inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 ">
           <div
             ref={modalRef}
             className="relative w-auto rounded-lg bg-white p-6 shadow-lg"
@@ -75,7 +75,7 @@ const ShareButton = () => {
               শেয়ার করুন:
             </p>
 
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-6 flex-wrap">
               <FacebookShareButton
                 url={shareUrl}
                 quote={shareText}
@@ -116,7 +116,6 @@ const ShareButton = () => {
                 />
               </LinkedinShareButton>
 
-        
               <WhatsappShareButton url={shareUrl} title={shareText} separator=" - ">
                 <FaWhatsapp
                   size={32}
