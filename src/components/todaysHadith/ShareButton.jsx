@@ -75,6 +75,7 @@ const ShareButton = () => {
               শেয়ার করুন:
             </p>
 
+            {/* Social media share buttons */}
             <div className="flex justify-center gap-6 flex-wrap">
               <FacebookShareButton
                 url={shareUrl}

@@ -8,10 +8,9 @@ import {
 const Contact = () => {
   return (
     <div className='border-t-4 border-b-4 pb-8 rounded-2xl border-dailyTalim-primary-500'>
-      <div className="ml-0 mr-0 lg:ml-4 lg:mr-4  text-white mt-8 ">
-        {/* Left Side - Contact Details */}
+      <div className="ml-0 mr-0 lg:ml-4 lg:mr-4   mt-8 ">
         <div className="flex w-full ml-4 lg:ml-0 flex-col gap-6 ">
-          <div className="text-black">
+          <div className="">
             <h1 className="mb-2 text-center text-3xl font-bold">
               যোগাযোগ করুন
             </h1>
@@ -19,10 +18,9 @@ const Contact = () => {
               আপনার মতামত ও পরামর্শ আমাদের কাছে গুরুত্বপূর্ণ ।
             </p>
           </div>
-          
         </div>
 
-        <div className="w-full  text-black  mt-8 " >
+        <div className="w-full    mt-8 " >
           <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <label className="block col-span-2 md:col-span-1">
               <span className="">পুরো নাম</span>
@@ -83,7 +81,6 @@ const Contact = () => {
         </div>
 
         <div className="flex justify-center mt-8 gap-6">
-            {/* all social media colors */}
             <a
               href="https://facebook.com"
               target="_blank"
@@ -94,7 +91,7 @@ const Contact = () => {
             <a
               href="https://twitter.com"
               target="_blank"
-              className="text-black transition hover:text-green-600"
+              className=" transition hover:text-green-600"
             >
               <BsTwitterX className="text-3xl" />
             </a>
@@ -108,7 +105,7 @@ const Contact = () => {
             <a
               href="https://github.com"
               target="_blank"
-              className="text-[#24292f] transition hover:text-green-600"
+              className=" transition hover:text-green-600"
             >
               <FaGithub className="text-3xl" />
             </a>
