@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useForm } from 'react-hook-form';
+import { Link } from 'lucide-react';
 
 const Contact = () => {
   const {
@@ -78,7 +79,7 @@ const Contact = () => {
             </div>
             <div className="col-span-2 md:col-span-1">
               <Label>প্রকার</Label>
-              <Select onValueChange={(value) => setValue("type", value)}>
+              <Select required onValueChange={(value) => setValue("type", value)}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="একটি নির্বাচন করুন" />
                 </SelectTrigger>
