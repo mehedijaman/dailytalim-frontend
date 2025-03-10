@@ -26,11 +26,11 @@ const TodaysHadith = () => {
           {/* Hidden heading: This is diplayed on the hadith photo card */}
           <div
             id="hadith-header"
-            className="text-primary-500 hidden rounded-t-md px-5 pt-4"
+            className="hidden rounded-t-md px-5 pt-4 text-primary-500"
           >
-            <div className="border-primary-500 flex items-center justify-center gap-4 border-b px-5 pb-2">
+            <div className="flex items-center justify-center gap-4 border-b border-primary-500 px-5 pb-2">
               <h2 className="text-xl font-semibold md:text-2xl">আজকের তালিম</h2>
-              <div className="border-primary-500 border-l-2 pl-4">
+              <div className="border-l-2 border-primary-500 pl-4">
                 <p className="font-semibold">{formattedHijriDateInBangla}</p>
                 <p className="flex gap-2">
                   <span>{formattedBanglaDate}</span> |{' '}
@@ -77,7 +77,7 @@ const TodaysHadith = () => {
                 হাদীস শুনেছেন? তিনি বলেনঃ আমি তিরিশ বছর বয়সে তাঁর নিকট এ হাদীস
                 শুনেছি।
                 <br />
-                <span className="text-base font-semibold text-green-600">
+                <span className="text-base font-semibold text-primary-500">
                   (জামে' আত-তিরমিজি : ৬১৬)
                 </span>{' '}
               </p>
@@ -85,7 +85,7 @@ const TodaysHadith = () => {
 
             {/* Hidden footer: This is displayed on hadith photo card*/}
             <footer id="hadith-footer" className="hidden">
-              <div className="border-primary-500 text-primary-500 mt-4 flex items-center gap-3 border-t px-2 pb-1 pt-2 font-semibold">
+              <div className="mt-4 flex items-center gap-3 border-t border-primary-500 px-2 pb-1 pt-2 font-semibold text-primary-500">
                 <p className="flex items-center gap-2">
                   <IoBookOutline size={20} />
                   DailyTalim

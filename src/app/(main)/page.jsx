@@ -6,7 +6,6 @@ const Root = () => {
   return (
     <div>
       <TodaysHadith />
-      <Footer/>
     </div>
   );
 };

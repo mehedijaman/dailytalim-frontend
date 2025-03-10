@@ -18,7 +18,7 @@ const FontResize = () => {
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <span className="text-sm">আরবি ফন্ট সাইজ</span>
-          <span className="text-green-500">{arabicFontSize}</span>
+          <span className="text-primary-500">{arabicFontSize}</span>
         </div>
         <div className="flex items-center gap-2">
           <Range
@@ -36,7 +36,7 @@ const FontResize = () => {
                   {...restProps}
                   className="h-1 flex-grow rounded-lg hover:cursor-pointer"
                   style={{
-                    background: `linear-gradient(to right, #16db65 ${percentage}%, gray ${percentage}%)`,
+                    background: `linear-gradient(to right, var(--progress-start) ${percentage}%, var(--progress-end) ${percentage}%)`,
                   }}
                 >
                   {children}
@@ -49,7 +49,7 @@ const FontResize = () => {
                 <div
                   key={key}
                   {...restProps}
-                  className="h-4 w-4 cursor-pointer rounded-full bg-green-400"
+                  className="h-4 w-4 cursor-pointer rounded-full bg-primary-500"
                 />
               );
             }}
@@ -68,7 +68,7 @@ const FontResize = () => {
       <div className="flex flex-col gap-1">
         <div className="flex items-center justify-between">
           <span className="text-sm">অনুবাদ ফন্ট সাইজ</span>
-          <span className="text-green-500">{banglaFontSize}</span>
+          <span className="text-primary-500">{banglaFontSize}</span>
         </div>
         <div className="flex items-center gap-2">
           <Range
@@ -86,7 +86,7 @@ const FontResize = () => {
                   {...restProps}
                   className="h-1 flex-grow rounded-lg hover:cursor-pointer"
                   style={{
-                    background: `linear-gradient(to right, #16db65 ${percentage}%, gray ${percentage}%)`,
+                    background: `linear-gradient(to right, var(--progress-start) ${percentage}%, var(--progress-end) ${percentage}%)`,
                   }}
                 >
                   {children}
@@ -99,7 +99,7 @@ const FontResize = () => {
                 <div
                   key={key}
                   {...restProps}
-                  className="h-4 w-4 cursor-pointer rounded-full bg-green-400"
+                  className="h-4 w-4 cursor-pointer rounded-full bg-primary-500"
                 />
               );
             }}
