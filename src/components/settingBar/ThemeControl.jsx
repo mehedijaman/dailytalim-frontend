@@ -18,15 +18,15 @@ const ThemeControl = () => {
   if (!mounted) return null;
 
   const themes = [
-    { title: 'System', name: 'system', icon: <WiMoonAltThirdQuarter /> },
-    { title: 'Light', name: 'light', icon: <IoMdSunny /> },
-    { title: 'Dark', name: 'dark', icon: <IoMoon /> },
-    { title: 'Warm', name: 'warm', icon: <WiMoonAltThirdQuarter /> },
+    { name: 'system', title: 'সিস্টেম', icon: <WiMoonAltThirdQuarter /> },
+    { name: 'light', title: 'লাইট', icon: <IoMdSunny /> },
+    { name: 'dark', title: 'ডার্ক', icon: <IoMoon /> },
+    { name: 'warm', title: 'ওয়ার্ম', icon: <WiMoonAltThirdQuarter /> },
   ];
 
   return (
     <div className="py-4">
-      <div className="bg-secondary-1 flex cursor-pointer justify-between rounded-full px-2 py-1">
+      <div className="flex cursor-pointer justify-between rounded-full bg-secondary-1 px-2 py-1">
         {themes.map((t, i) => (
           <p
             onClick={() => {

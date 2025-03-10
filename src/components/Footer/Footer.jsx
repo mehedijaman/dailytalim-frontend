@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 border-b border-gray-600 pb-6 md:grid-cols-3">
           {/* About Section */}
           <div>
-            <h2 className="text-2xl font-semibold">Daily Talim</h2>
+            <h2 className="text-2xl font-semibold">ডেইলি তালিম</h2>
             <p className="mt-3">
               ইসলামিক জ্ঞান ও হাদিসের একটি বিশ্বস্ত উৎস। প্রতিদিন নতুন তালীম
               নিয়ে আসছি।
