@@ -11,8 +11,11 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.warm:root {
+  background: #fcf8f0;
+}
 .dark:root {
-  background: #101720;
+  background: #0f161f;
 }
 
 :root {
@@ -22,7 +25,6 @@
   --primary-300: 144, 88%, 73%;
   --primary-200: 143, 92%, 85%;
   --primary-100: 142, 100%, 93%;
-  --primary-50: 140, 88%, 97%;
   --secondary-3: 144, 82%, 47%;
   --secondary-2: 143, 92%, 85%;
   --secondary-1: 142, 100%, 93%;
@@ -30,6 +32,8 @@
   --text: 0, 0%, 1%;
   --muted: 0, 0%, 45%;
   --sidebar: 0, 0%, 96%;
+  --progress-start: hsl(144, 82%, 47%);
+  --progress-end: gray;
 }
 .dark {
   --background: 214, 33%, 9%;
@@ -39,4 +43,22 @@
   --border: 215, 25%, 27%;
   --text: 0, 0%, 100%;
   --sidebar: 217, 32%, 14%;
+}
+
+.warm {
+  --background: 40, 67%, 96%;
+  --primary-500: 31, 69%, 61%;
+  --primary-400: 35, 69%, 72%;
+  --primary-300: 35, 70%, 83%;
+  --primary-200: 38, 71%, 90%;
+  --primary-100: 40, 67%, 96%;
+  --secondary-3: 28, 68%, 53%;
+  --secondary-2: 35, 70%, 83%;
+  --secondary-1: 38, 71%, 90%;
+  --border: 35, 70%, 83%;
+  --text: 0, 0%, 0%;
+  --muted: 0, 0%, 45%;
+  --sidebar: 43, 45%, 92%;
+  --progress-start: hsl(31, 69%, 61%);
+  --progress-end: gray;
 }
