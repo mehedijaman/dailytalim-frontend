@@ -1,4 +1,5 @@
 import useSidebarsContext from '@/hooks/useSidebarsContext';
+import Search from '@/components/Search/Search';
 
 const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarsContext();
@@ -19,13 +20,15 @@ const Sidebar = () => {
         className={`border-border-color bg-sidebar-bg h-screen w-72 overflow-y-auto border-r ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
         <div className="p-6">
-          <div className="bg-secondary-1 cursor-pointer rounded-md px-4 py-2">
+          <Search />
+          <div className="bg-secondary-1 cursor-pointer rounded-md px-4 py-2 mt-5">
             <h5 className="font-semibold">সহিহ বুখারি</h5>
             <p className="text-sm text-muted">
               মোট হাদিস <span>৭৫৪৪</span>
             </p>
           </div>
         </div>
+        
       </div>
     </div>
   );
