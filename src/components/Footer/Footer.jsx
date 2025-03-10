@@ -5,7 +5,7 @@ import { BsTwitterX } from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <footer className="mt-32 bg-[#16db65d2] py-10 rounded-lg -mb-0 md:-mb-20 ">
+    <footer className="-mb-0 w-full bg-primary-300 py-10 text-black md:-mb-20">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Top Section */}
         <div className="grid grid-cols-1 gap-8 border-b border-gray-600 pb-6 md:grid-cols-3">
