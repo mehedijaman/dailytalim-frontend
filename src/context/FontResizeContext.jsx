@@ -23,8 +23,8 @@ const FontResizeProvider = ({ children }) => {
   }, []);
   useEffect(() => {
     if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('arabic-font-size', arabicFontSize.toString());
-      localStorage.setItem('bangla-font-size', banglaFontSize.toString());
+      localStorage.setItem('arabic-font-size', arabicFontSize);
+      localStorage.setItem('bangla-font-size', banglaFontSize);
     }
   }, [arabicFontSize, banglaFontSize]);
 
