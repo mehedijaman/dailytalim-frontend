@@ -22,7 +22,9 @@ const MainLayout = ({ children }) => {
           className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding py-16 duration-300 md:pr-72`}
         >
           <div>
-            <div className="mx-auto my-8 max-w-6xl px-4">{children}</div>
+            <div className="mx-auto my-8 min-h-screen max-w-6xl px-4">
+              {children}
+            </div>
             <Footer />
           </div>
         </div>
