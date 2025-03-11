@@ -24,7 +24,7 @@ const Contact = () => {
     reset();
   };
   return (
-    <div className="border-primary-500 rounded-2xl border-b-4 border-t-4 pb-8">
+    <div className="rounded-2xl border-b-4 border-t-4 border-primary-500 pb-8">
       <div className="ml-2 mr-2 mt-8 lg:ml-4 lg:mr-4">
         <div className="ml-4 flex w-full flex-col gap-6 lg:ml-0">
           <div>
@@ -112,53 +112,11 @@ const Contact = () => {
             </div>
             <Button
               type="submit"
-              className="col-span-2 bg-[#16db65] hover:bg-green-600"
+              className="col-span-2 bg-primary-500 hover:bg-primary-400"
             >
               জমা দিন
             </Button>
           </form>
-        </div>
-
-        <div className="mt-8 flex justify-center gap-6">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            className="text-[#0866ff] transition hover:text-green-600"
-          >
-            <FaFacebook className="text-3xl" />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            className="transition hover:text-green-600"
-          >
-            <BsTwitterX className="text-3xl" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            className="text-[#e1306c] transition hover:text-green-600"
-          >
-            <FaInstagram className="text-3xl" />
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            className="transition hover:text-green-600"
-          >
-            <FaGithub className="text-3xl" />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.example"
-            target="_blank"
-            className="text-[#4285F4] transition hover:text-green-600"
-          >
-            <img
-              src="https://i.postimg.cc/X7dZYZHh/google-play.png"
-              className="h-7 w-7"
-              alt="Google Play"
-            />
-          </a>
         </div>
       </div>
     </div>
