@@ -5,9 +5,21 @@ export const SidebarContext = createContext();
 const SideBarsProvider = ({ children }) => {
   const width = useWindowWidth();
 
+  const getLocalStrogeValue = (key, defaultValue) => {
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem(key);
+      return storedValue ? JSON.parse(storedValue) : defaultValue;
+    }
+    return defaultValue;
+  };
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
   const [isSettingBarOpen, setIsSettingBarOpen] = useState(false);
+
+  useEffect(() => {
+    setIsSidebarOpen(getLocalStrogeValue('isSidebarOpen', false));
+  }, [setIsSidebarOpen]);
 
   useEffect(() => {
     if (isSettingBarOpen) {
@@ -18,8 +30,14 @@ const SideBarsProvider = ({ children }) => {
   }, [isSettingBarOpen, width]);
 
   useEffect(() => {
-    setIsSidebarOpen(width >= 1024);
-  }, [width]);
+    if (typeof window !== 'undefined') {
+      if (width < 1024) {
+        localStorage.setItem('isSidebarOpen', 'false');
+      } else {
+        localStorage.setItem('isSidebarOpen', JSON.stringify(isSidebarOpen));
+      }
+    }
+  }, [isSidebarOpen, width]);
 
   const sidebar = {
     isSidebarOpen,
