@@ -12,7 +12,7 @@
 }
 
 .warm:root {
-  background: #fcf8f0;
+  background: hsl(38, 71%, 92%);
 }
 .dark:root {
   background: #0f161f;
@@ -46,19 +46,19 @@
 }
 
 .warm {
-  --background: 40, 67%, 96%;
-  --primary-500: 31, 69%, 61%;
-  --primary-400: 35, 69%, 72%;
-  --primary-300: 35, 70%, 83%;
-  --primary-200: 38, 71%, 90%;
-  --primary-100: 40, 67%, 96%;
+  --background: 38, 71%, 92%;
+  --primary-500: 29, 68%, 53%;
+  --primary-400: 31, 69%, 61%;
+  --primary-300: 35, 70%, 72%;
+  --primary-200: 36, 70%, 83%;
+  --primary-100: 38, 71%, 92%;
   --secondary-3: 28, 68%, 53%;
   --secondary-2: 35, 70%, 83%;
-  --secondary-1: 38, 71%, 90%;
+  --secondary-1: 36, 70%, 83%;
   --border: 35, 70%, 83%;
   --text: 0, 0%, 0%;
   --muted: 0, 0%, 45%;
-  --sidebar: 43, 45%, 92%;
+  --sidebar: 37, 66%, 87%;
   --progress-start: hsl(31, 69%, 61%);
   --progress-end: gray;
 }
