@@ -8,6 +8,7 @@ const FontResizeProvider = ({ children }) => {
       const storedValue = localStorage.getItem(key);
       return storedValue ? parseInt(storedValue) : defaultValue;
     }
+    return defaultValue;
   };
 
   const [arabicFontSize, setArabicFontSize] = useState(24);
@@ -16,15 +17,19 @@ const FontResizeProvider = ({ children }) => {
   const [prayerTimeFontSize, setPrayerTimeFontSize] = useState(22);
 
   useEffect(() => {
-    if (typeof localStorage !== 'undefined') {
-      setArabicFontSize(getLocalStrogeValue('arabic-font-size'));
-      setBanglaFontSize(getLocalStrogeValue('bangla-font-size'));
-    }
-  }, []);
+    setArabicFontSize(getLocalStrogeValue('arabic-font-size', 24));
+    setBanglaFontSize(getLocalStrogeValue('bangla-font-size', 18));
+  }, [setArabicFontSize, setBanglaFontSize]);
   useEffect(() => {
     if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('arabic-font-size', arabicFontSize);
-      localStorage.setItem('bangla-font-size', banglaFontSize);
+      localStorage.setItem(
+        'arabic-font-size',
+        arabicFontSize ? arabicFontSize.toString() : 24,
+      );
+      localStorage.setItem(
+        'bangla-font-size',
+        banglaFontSize ? banglaFontSize.toString() : 18,
+      );
     }
   }, [arabicFontSize, banglaFontSize]);
 
