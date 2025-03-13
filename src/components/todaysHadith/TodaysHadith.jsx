@@ -24,7 +24,6 @@ const TodaysHadith = () => {
       return res.data;
     },
   });
-  console.log(todaysHadith);
 
   return (
     <main className="">

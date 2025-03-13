@@ -2,10 +2,15 @@ import useSidebarsContext from '@/hooks/useSidebarsContext';
 import Search from '@/components/Search/Search';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarsContext();
   const axiosPublic = useAxiosPublic();
+  const pathname = usePathname();
+  console.log(pathname);
+
   const convertToBanglaDigits = num => {
     const banglaDigit = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
     return num.toString().replace(/\d/g, digit => banglaDigit[digit]);
@@ -18,7 +23,7 @@ const Sidebar = () => {
       return hadithRes.data.flatMap(hadith => hadith.chapters);
     },
   });
-  console.log(chapters);
+
   return (
     <div
       className={`${!isSidebarOpen && 'pointer-events-none'} fixed flex h-screen`}
@@ -38,16 +43,17 @@ const Sidebar = () => {
         <div className="p-6 pb-24">
           <Search />
           {chapters.map((chapter, i) => (
-            <div
-              key={i}
-              className="mt-5 cursor-pointer rounded-md bg-secondary-1 px-4 py-2"
-            >
-              <h5 className="font-semibold">{chapter.name}</h5>
-              <p className="text-sm text-muted">
-                মোট হাদিস{' '}
-                <span>{convertToBanglaDigits(chapter?.hadiths?.length)}</span>
-              </p>
-            </div>
+            <Link key={i} href={`/hadiths/${chapter.id}`}>
+              <div
+                className={`mt-5 cursor-pointer rounded-md ${pathname === `/hadiths/${chapter.id}` && 'bg-secondary-1'} px-4 py-2`}
+              >
+                <h5 className="font-semibold">{chapter.name}</h5>
+                <p className="text-sm text-muted">
+                  মোট হাদিস{' '}
+                  <span>{convertToBanglaDigits(chapter?.hadiths?.length)}</span>
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
