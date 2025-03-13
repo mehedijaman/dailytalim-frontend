@@ -1,10 +1,8 @@
 import { Anek_Bangla } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
-import FontResizeProvider from '@/context/FontResizeContext';
 import SettingBar from '@/components/settingBar/SettingBar';
-import SideBarsProvider from '@/context/SideBarsContext';
+import Providers from '@/context/Providers';
 
 const anekBangla = Anek_Bangla({
   variable: '--anek-bangla',
@@ -23,22 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="bn" suppressHydrationWarning>
       <body className={`${anekBangla.className} antialiased`}>
-        <ThemeProvider
-          defaultTheme="system"
-          enableSystem={true}
-          attribute="class"
-          themes={['light', 'dark', 'warm']}
-          disableTransitionOnChange
-        >
+        <Providers>
           <main>
-            <SideBarsProvider>
-              <FontResizeProvider>
-                {children}
-                <SettingBar />
-              </FontResizeProvider>
-            </SideBarsProvider>
+            {children}
+            <SettingBar />
           </main>
-        </ThemeProvider>
+        </Providers>
+
         <Toaster />
       </body>
     </html>
