@@ -62,3 +62,62 @@
   --progress-start: hsl(31, 69%, 61%);
   --progress-end: gray;
 }
+
+/* Custom Scrollbar for root */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px 0px 0px 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+html.warm .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5b464;
+}
+html.warm .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #df9b40;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7ef7ae;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3eea82;
+}
+
+/* Custom Scrollbar for sidebars */
+.sidebar-custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px 0px 0px 10px;
+  transition: backgroud 0.3s ease-in-out;
+}
+
+html.warm .sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #e5b464;
+}
+
+html.warm .sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background: #df9b40;
+}
+
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #7ef7ae;
+}
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background: #3eea82;
+}
