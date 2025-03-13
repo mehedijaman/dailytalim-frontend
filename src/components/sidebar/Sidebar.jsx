@@ -33,7 +33,7 @@ const Sidebar = () => {
         aria-hidden={!isSidebarOpen}
       />
       <div
-        className={`h-screen w-72 overflow-y-auto border-r border-border-color bg-sidebar-bg ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
+        className={`sidebar-custom-scrollbar h-screen w-72 overflow-y-auto border-r border-border-color bg-sidebar-bg ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
         <div className="p-6 pb-24">
           <Search />

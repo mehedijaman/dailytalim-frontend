@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="bn" suppressHydrationWarning>
-      <body className={`${anekBangla.className} antialiased`}>
+      <body className={`${anekBangla.className} custom-scrollbar antialiased`}>
         <Providers>
           <main>
             {children}
