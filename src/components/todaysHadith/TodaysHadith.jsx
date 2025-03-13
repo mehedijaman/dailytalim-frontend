@@ -5,6 +5,8 @@ import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
 import useAllDate from '@/hooks/useAllDate';
 import useFontResize from '@/hooks/useFontResize';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosPublic from '@/hooks/useAxiosPublic';
 
 const {
   formattedBanglaDate,
@@ -14,6 +16,15 @@ const {
 
 const TodaysHadith = () => {
   const { arabicFontSize, banglaFontSize } = useFontResize();
+  const axiosPublic = useAxiosPublic();
+  const { data: todaysHadith = {} } = useQuery({
+    queryKey: ['todaysHadith'],
+    queryFn: async () => {
+      const res = await axiosPublic.get('/');
+      return res.data;
+    },
+  });
+  console.log(todaysHadith);
 
   return (
     <main className="">
@@ -46,18 +57,7 @@ const TodaysHadith = () => {
                 className="mt-2 cursor-pointer text-2xl leading-relaxed"
                 style={{ fontSize: `${arabicFontSize}px` }}
               >
-                حَدَّثَنَا مُوسَى بْنُ عَبْدِ الرَّحْمَنِ الْكِنْدِيُّ
-                الْكُوفِيُّ، حَدَّثَنَا زَيْدُ بْنُ الْحُبَابِ، أَخْبَرَنَا
-                مُعَاوِيَةُ بْنُ صَالِحٍ، حَدَّثَنِي سُلَيْمُ بْنُ عَامِرٍ،
-                قَالَ سَمِعْتُ أَبَا أُمَامَةَ، يَقُولُ سَمِعْتُ رَسُولَ اللَّهِ
-                صلى الله عليه وسلم يَخْطُبُ فِي حَجَّةِ الْوَدَاعِ فَقَالَ"
-                اتَّقُوا اللَّهَ رَبَّكُمْ وَصَلُّوا خَمْسَكُمْ وَصُومُوا
-                شَهْرَكُمْ وَأَدُّوا زَكَاةَ أَمْوَالِكُمْ وَأَطِيعُوا ذَا
-                أَمْرِكُمْ تَدْخُلُوا جَنَّةَ رَبِّكُمْ ". قَالَ فَقُلْتُ لأَبِي
-                أُمَامَةَ مُنْذُ كَمْ سَمِعْتَ مِنْ رَسُولِ اللَّهِ صلى الله
-                عليه وسلم هَذَا الْحَدِيثَ قَالَ سَمِعْتُهُ وَأَنَا ابْنُ
-                ثَلاَثِينَ سَنَةً . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ
-                صَحِيحٌ .
+                {todaysHadith?.todaysHadith?.ar}
               </p>
             </div>
             {/* Hadith Bangla Translation*/}
@@ -66,20 +66,7 @@ const TodaysHadith = () => {
                 className="mt-2 cursor-pointer text-left text-lg leading-relaxed"
                 style={{ fontSize: `${banglaFontSize}px` }}
               >
-                আবূ উমামা (রাঃ) হতে বর্ণিত: <br />
-                আমি রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম)কে বিদায়
-                হাজ্জের ভাষণে বলতে শুনেছি, তিনি বলেছেনঃ তোমাদের প্রতিপালক আল্লাহ
-                তা’আলাকে ভয় কর, তোমাদের পাঁচ ওয়াক্ত নামায আদায় কর। তোমাদের
-                রামাযান মাসের রোজারাখ, তোমাদের ধন-দৌলতের যাকাত আদায় কর এবং
-                তোমাদের আমীরের অনুসরণ কর, তবেই তোমাদের রবের জান্নাতে প্রবেশ করতে
-                পারবে। আমি (সুলাইম) আবূ উমামা (রাঃ) -কে প্রশ্ন করলাম, আপনি কতদিন
-                পূর্বে রাসূলুল্লাহ (সাল্লাল্লাহু ‘আলাইহি ওয়া সাল্লাম)-এর নিকট এ
-                হাদীস শুনেছেন? তিনি বলেনঃ আমি তিরিশ বছর বয়সে তাঁর নিকট এ হাদীস
-                শুনেছি।
-                <br />
-                <span className="text-base font-semibold text-primary-500">
-                  (জামে' আত-তিরমিজি : ৬১৬)
-                </span>{' '}
+                {todaysHadith?.todaysHadith?.bn}
               </p>
             </div>
 
