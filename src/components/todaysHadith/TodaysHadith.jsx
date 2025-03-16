@@ -7,6 +7,7 @@ import useAllDate from '@/hooks/useAllDate';
 import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
+import { useEffect, useState } from 'react';
 
 const {
   formattedBanglaDate,
@@ -17,6 +18,7 @@ const {
 const TodaysHadith = () => {
   const { arabicFontSize, banglaFontSize } = useFontResize();
   const axiosPublic = useAxiosPublic();
+
   const { data: todaysHadith = {} } = useQuery({
     queryKey: ['todaysHadith'],
     queryFn: async () => {
@@ -55,18 +57,20 @@ const TodaysHadith = () => {
               <p
                 className="mt-2 cursor-pointer text-2xl leading-relaxed"
                 style={{ fontSize: `${arabicFontSize}px` }}
-              >
-                {todaysHadith?.todaysHadith?.ar}
-              </p>
+                dangerouslySetInnerHTML={{
+                  __html: todaysHadith?.todaysHadith?.ar,
+                }}
+              />
             </div>
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
               <p
                 className="mt-2 cursor-pointer text-left text-lg leading-relaxed"
                 style={{ fontSize: `${banglaFontSize}px` }}
-              >
-                {todaysHadith?.todaysHadith?.bn}
-              </p>
+                dangerouslySetInnerHTML={{
+                  __html: todaysHadith?.todaysHadith?.bn,
+                }}
+              />
             </div>
 
             {/* Hidden footer: This is displayed on hadith photo card*/}

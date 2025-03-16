@@ -31,18 +31,16 @@ const HadithsPage = ({ params }) => {
               <p
                 className="mt-2 cursor-pointer text-2xl leading-relaxed"
                 style={{ fontSize: `${arabicFontSize}px` }}
-              >
-                {hadith?.ar}
-              </p>
+                dangerouslySetInnerHTML={{ __html: hadith?.ar }}
+              />
             </div>
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
               <p
                 className="mt-2 cursor-pointer text-left text-lg leading-relaxed"
                 style={{ fontSize: `${banglaFontSize}px` }}
-              >
-                {hadith?.bn}
-              </p>
+                dangerouslySetInnerHTML={{ __html: hadith?.bn }}
+              />
             </div>
           </div>
         </div>
