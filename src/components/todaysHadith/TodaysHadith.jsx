@@ -8,7 +8,7 @@ import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { useEffect, useState } from 'react';
-import HadithLoader from '@/app/(main)/hadiths/[chapterId]/loading';
+import HadithLoader from '@/app/(main)/hadiths/loading';
 
 const {
   formattedBanglaDate,
