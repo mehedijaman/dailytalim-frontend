@@ -4,6 +4,7 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import React, { use } from 'react';
+import HadithLoader from './loading';
 
 const HadithsPage = ({ params }) => {
   const { chapterId } = use(params);
@@ -11,7 +12,7 @@ const HadithsPage = ({ params }) => {
   const axiosPublic = useAxiosPublic();
   const { arabicFontSize, banglaFontSize } = useFontResize();
 
-  const { data: chapter = [] } = useQuery({
+  const { data: chapter = [], isPending } = useQuery({
     queryKey: ['chapter', chapterId],
     queryFn: async () => {
       const kitabs = await axiosPublic.get('/hadiths');
@@ -20,6 +21,9 @@ const HadithsPage = ({ params }) => {
       return chapterRes;
     },
   });
+  if (isPending) {
+    return <HadithLoader />;
+  }
 
   return (
     <div className="space-y-10 px-5">
