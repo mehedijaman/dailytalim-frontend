@@ -14,6 +14,7 @@ const FontResize = () => {
 
   const resetArabicFontSize = () => setArabicFontSize(24); // Default value
   const resetBanglaFontSize = () => setBanglaFontSize(18); // Default value
+  const resetPrayerTimeFontSize = () => setPrayerTimeFontSize(16); // Default value
 
   return (
     <div className="flex flex-col gap-4 rounded-lg">
@@ -160,7 +161,7 @@ const FontResize = () => {
           <div className="mx-2 h-4 border-l border-gray-300"></div>{' '}
           {/* Border between range and reset button */}
           <button
-            onClick={resetBanglaFontSize}
+            onClick={resetPrayerTimeFontSize}
             className="rounded bg-red-500 px-2 py-1 text-xs text-white"
           >
             <RiResetLeftFill size={15} />
