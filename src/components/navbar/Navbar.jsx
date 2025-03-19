@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <div
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-[5px] p-2 text-muted transition-colors duration-200 dark:text-white"
+          className="cursor-pointer rounded-[5px] bg-secondary-1 p-2 text-muted transition-colors duration-200 hover:bg-secondary-2 dark:text-white"
           title="Toggle Sidebar"
         >
           <div>
@@ -43,21 +43,25 @@ const Navbar = () => {
             )}
           </div>
         </div>{' '}
-        <Image
-          src={'/logo_dark.png'}
-          alt="logo"
-          width={35}
-          height={10}
-          className="hidden rounded-[5px] object-cover md:block"
-        />
-        <h1 className="text-xl font-bold md:text-2xl"> ডেইলি তালিম </h1>
+        <Link href="/">
+          <Image
+            src={'/logo_dark.png'}
+            alt="logo"
+            width={35}
+            height={10}
+            className="hidden rounded-[5px] object-cover md:block"
+          />
+        </Link>
+        <Link href="/">
+          <h1 className="text-xl font-bold md:text-2xl"> ডেইলি তালিম </h1>
+        </Link>
       </div>
       <div className="hidden gap-4 md:flex">
         {navLinks.map((navLink, i) => (
           <Link
             key={i}
             href={navLink.path}
-            className={`px-1 ${pathname === navLink.path && 'border-primary-500 text-primary-500 border-b font-semibold'}`}
+            className={`px-1 ${pathname === navLink.path && 'border-b border-primary-500 font-semibold text-primary-500'}`}
           >
             {navLink.title}
           </Link>
@@ -66,13 +70,13 @@ const Navbar = () => {
       <div className="flex items-center gap-2 text-muted dark:text-white">
         <div
           onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
-          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-full p-2 md:hidden"
+          className="cursor-pointer rounded-full bg-secondary-1 p-2 hover:bg-secondary-2 md:hidden"
         >
           <SiDatefns size={20} />
         </div>
         <div
           onClick={() => setIsSettingBarOpen(!isSettingBarOpen)}
-          className="bg-secondary-1 hover:bg-secondary-2 cursor-pointer rounded-full p-2"
+          className="cursor-pointer rounded-full bg-secondary-1 p-2 hover:bg-secondary-2"
         >
           <IoSettingsSharp size={20} />
         </div>

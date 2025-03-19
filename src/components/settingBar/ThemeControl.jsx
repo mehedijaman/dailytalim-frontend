@@ -25,7 +25,7 @@ const ThemeControl = () => {
   ];
 
   return (
-    <div className="py-4">
+    <div className="">
       <div className="flex cursor-pointer justify-between rounded-full bg-secondary-1 px-2 py-1">
         {themes.map((t, i) => (
           <p

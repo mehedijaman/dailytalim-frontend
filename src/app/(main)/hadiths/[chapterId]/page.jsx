@@ -4,7 +4,7 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import React, { use } from 'react';
-import HadithLoader from './loading';
+import HadithLoader from '../loading';
 
 const HadithsPage = ({ params }) => {
   const { chapterId } = use(params);
