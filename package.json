@@ -26,6 +26,7 @@
     "date-bengali-revised": "^2.0.2",
     "date-fns": "^4.1.0",
     "downloadjs": "^1.4.7",
+    "fuse.js": "^7.1.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.476.0",
     "moment-hijri": "^3.0.0",
