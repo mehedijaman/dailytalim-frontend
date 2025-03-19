@@ -3,6 +3,7 @@ import useSidebarsContext from '@/hooks/useSidebarsContext';
 import FontResize from './FontResize';
 import ThemeControl from './ThemeControl';
 import ChangeLanguage from './ChangeLanguage';
+import ResetSettingBtn from './ResetSettingBtn';
 
 const SettingBar = () => {
   const { isSettingBarOpen } = useSidebarsContext();
@@ -15,6 +16,7 @@ const SettingBar = () => {
       <ThemeControl />
       <ChangeLanguage />
       <FontResize />
+      <ResetSettingBtn />
     </div>
   );
 };
