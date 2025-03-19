@@ -43,30 +43,26 @@ const Footer = () => {
             <h2 className="mb-3 text-xl font-semibold">যোগাযোগ</h2>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/DailyTalimBD"
                 target="_blank"
-                className="text-[#0866ff] hover:text-black"
+                className="text-[#0866ff]"
               >
                 <FaFacebook size={24} />
               </Link>
-              <Link
-                href="https://twitter.com"
-                target="_blank"
-                className="text-black hover:text-blue-600"
-              >
+              <Link href="https://twitter.com" target="_blank" className="">
                 <BsTwitterX size={24} />
               </Link>
               <Link
                 href="https://instagram.com"
                 target="_blank"
-                className="text-pink-600 hover:text-black"
+                className="text-pink-600"
               >
                 <FaInstagram size={24} />
               </Link>
               <Link
-                href="https://github.com"
+                href="https://github.com/dailytalim"
                 target="_blank"
-                className="text-gray-800 hover:text-black"
+                className="text-gray-800"
               >
                 <FaGithub size={24} />
               </Link>
