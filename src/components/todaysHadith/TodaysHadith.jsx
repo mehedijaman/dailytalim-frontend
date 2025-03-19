@@ -8,6 +8,7 @@ import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { useEffect, useState } from 'react';
+import HadithLoader from '@/app/(main)/hadiths/loading';
 
 const {
   formattedBanglaDate,
@@ -19,13 +20,17 @@ const TodaysHadith = () => {
   const { arabicFontSize, banglaFontSize } = useFontResize();
   const axiosPublic = useAxiosPublic();
 
-  const { data: todaysHadith = {} } = useQuery({
+  const { data: todaysHadith = {}, isPending } = useQuery({
     queryKey: ['todaysHadith'],
     queryFn: async () => {
       const res = await axiosPublic.get('/');
       return res.data;
     },
   });
+
+  if (isPending) {
+    return <HadithLoader />;
+  }
 
   return (
     <main className="">

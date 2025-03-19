@@ -1,3 +1,4 @@
+import useFontResize from '@/hooks/useFontResize';
 import { Table, TableBody, TableCell, TableRow } from '../ui/table';
 import { Coordinates, CalculationMethod, PrayerTimes, Madhab } from 'adhan';
 import { subMinutes, format } from 'date-fns';
@@ -5,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 const PrayerTimeTable = () => {
+  const { prayerTimeFontSize } = useFontResize();
   const [location, setLocation] = useState({
     latitude: '23.810331',
     longitude: '90.412521',
@@ -67,12 +69,16 @@ const PrayerTimeTable = () => {
     .replace(':00', '');
   return (
     <div className="text-black">
-      <div className="bg-primary-200 rounded-lg p-4">
+      <div className="rounded-lg bg-primary-200 p-4">
         <h4 className="text-center font-medium">নামাজের সময়সূচি</h4>
-        <Table>
+        <Table className="overflow-hidden">
           <TableBody>
             {formattedPrayerTimes.map(prayersTime => (
-              <TableRow key={prayersTime.name} className="border-muted">
+              <TableRow
+                key={prayersTime.name}
+                className="border-muted"
+                style={{ fontSize: `${prayerTimeFontSize}px` }}
+              >
                 <TableCell className="font-medium">
                   {prayersTime.name}
                 </TableCell>
@@ -85,11 +91,14 @@ const PrayerTimeTable = () => {
           </TableBody>
         </Table>
       </div>
-      <div className="mt-3 space-y-3">
-        <div className="bg-primary-200 rounded-lg px-4 py-2">
+      <div
+        className="mt-3 space-y-3"
+        style={{ fontSize: `${prayerTimeFontSize}px` }}
+      >
+        <div className="rounded-lg bg-primary-200 px-4 py-2">
           সেহেরী শেষ - {sehriEndTime}{' '}
         </div>
-        <div className="bg-primary-200 rounded-lg px-4 py-2">
+        <div className="rounded-lg bg-primary-200 px-4 py-2">
           ইফতার - {iftarTime}{' '}
         </div>
       </div>
