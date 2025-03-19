@@ -4,12 +4,14 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useMemo, useState } from 'react';
+import Fuse from 'fuse.js';
 
 const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarsContext();
+  const [searchQuery, setSearchQuery] = useState('');
   const axiosPublic = useAxiosPublic();
   const pathname = usePathname();
-  console.log(pathname);
 
   const convertToBanglaDigits = num => {
     const banglaDigit = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
@@ -23,6 +25,17 @@ const Sidebar = () => {
       return hadithRes.data.flatMap(hadith => hadith.chapters);
     },
   });
+
+  const fuse = useMemo(() => {
+    return new Fuse(chapters, {
+      keys: ['name'],
+      threshold: 0.4,
+    });
+  }, [chapters]);
+
+  const filteredChapters = searchQuery
+    ? fuse.search(searchQuery).map(result => result.item)
+    : chapters;
 
   return (
     <div
@@ -41,8 +54,8 @@ const Sidebar = () => {
         className={`sidebar-custom-scrollbar h-screen w-72 overflow-y-auto border-r border-border-color bg-sidebar-bg ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
         <div className="p-6 pb-24">
-          <Search />
-          {chapters.map((chapter, i) => (
+          <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          {filteredChapters.map((chapter, i) => (
             <Link key={i} href={`/hadiths/${chapter.id}`}>
               <div
                 className={`mt-5 cursor-pointer rounded-md ${pathname === `/hadiths/${chapter.id}` && 'bg-secondary-1'} px-4 py-2`}
