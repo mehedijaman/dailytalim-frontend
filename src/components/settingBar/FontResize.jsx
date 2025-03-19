@@ -1,5 +1,6 @@
 import useFontResize from '@/hooks/useFontResize';
 import { Range } from 'react-range';
+import { RiResetLeftFill } from 'react-icons/ri';
 
 const FontResize = () => {
   const {
@@ -7,6 +8,8 @@ const FontResize = () => {
     setArabicFontSize,
     banglaFontSize,
     setBanglaFontSize,
+    prayerTimeFontSize,
+    setPrayerTimeFontSize,
   } = useFontResize();
 
   const resetArabicFontSize = () => setArabicFontSize(24); // Default value
@@ -60,7 +63,7 @@ const FontResize = () => {
             onClick={resetArabicFontSize}
             className="rounded bg-red-500 px-2 py-1 text-xs text-white"
           >
-            Reset
+            <RiResetLeftFill size={15} />
           </button>
         </div>
       </div>
@@ -110,7 +113,57 @@ const FontResize = () => {
             onClick={resetBanglaFontSize}
             className="rounded bg-red-500 px-2 py-1 text-xs text-white"
           >
-            Reset
+            <RiResetLeftFill size={15} />
+          </button>
+        </div>
+      </div>
+      {/* Prayer Time Table Font Size */}
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center justify-between">
+          <span className="text-sm">নামাজের সময়সূচি ফন্ট সাইজ</span>
+          <span className="text-primary-500">{prayerTimeFontSize}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Range
+            step={1}
+            min={14}
+            max={22}
+            values={[prayerTimeFontSize]}
+            onChange={values => setPrayerTimeFontSize(values[0])}
+            renderTrack={({ props, children }) => {
+              const percentage = ((prayerTimeFontSize - 14) / (22 - 14)) * 100;
+              const { key, ...restProps } = props;
+              return (
+                <div
+                  key={key}
+                  {...restProps}
+                  className="h-1 flex-grow rounded-lg hover:cursor-pointer"
+                  style={{
+                    background: `linear-gradient(to right, var(--progress-start) ${percentage}%, var(--progress-end) ${percentage}%)`,
+                  }}
+                >
+                  {children}
+                </div>
+              );
+            }}
+            renderThumb={({ props }) => {
+              const { key, ...restProps } = props;
+              return (
+                <div
+                  key={key}
+                  {...restProps}
+                  className="h-4 w-4 cursor-pointer rounded-full bg-primary-500"
+                />
+              );
+            }}
+          />
+          <div className="mx-2 h-4 border-l border-gray-300"></div>{' '}
+          {/* Border between range and reset button */}
+          <button
+            onClick={resetBanglaFontSize}
+            className="rounded bg-red-500 px-2 py-1 text-xs text-white"
+          >
+            <RiResetLeftFill size={15} />
           </button>
         </div>
       </div>
