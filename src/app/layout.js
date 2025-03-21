@@ -1,4 +1,8 @@
-import { Anek_Bangla } from 'next/font/google';
+import {
+  Anek_Bangla,
+  Noto_Serif_Bengali,
+  Scheherazade_New,
+} from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'sonner';
 import SettingBar from '@/components/settingBar/SettingBar';
@@ -7,6 +11,16 @@ import Providers from '@/context/Providers';
 const anekBangla = Anek_Bangla({
   variable: '--anek-bangla',
   subsets: ['bengali'],
+});
+const notoSerifBengali = Noto_Serif_Bengali({
+  variable: '--noto-serif-banglai',
+  subsets: ['bengali'],
+});
+
+const scheherazadeNew = Scheherazade_New({
+  weight: ['400', '500', '600', '700'],
+  variable: '--scheherazade-new',
+  subsets: ['arabic'],
 });
 
 export const metadata = {
@@ -20,7 +34,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="bn" suppressHydrationWarning>
-      <body className={`${anekBangla.className} custom-scrollbar antialiased`}>
+      <body
+        className={`${anekBangla.className} ${notoSerifBengali.variable} ${scheherazadeNew.variable} custom-scrollbar antialiased`}
+      >
         <Providers>
           <main>
             {children}

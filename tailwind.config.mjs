@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'noto-serif-banglai': 'var(--noto-serif-banglai)',
+        'scheherazade-new': 'var(--scheherazade-new)',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
