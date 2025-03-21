@@ -53,7 +53,7 @@ const Sidebar = () => {
       <div
         className={`sidebar-custom-scrollbar h-screen w-72 overflow-y-auto border-r border-border-color bg-sidebar-bg ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} z-50 transition-all duration-300 ease-in-out`}
       >
-        <div className="p-6 pb-24">
+        <div className="p-6 pb-24 ">
           <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           {filteredChapters.map((chapter, i) => (
             <Link key={i} href={`/hadiths/${chapter.id}`}>

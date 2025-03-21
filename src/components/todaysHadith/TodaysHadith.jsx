@@ -32,7 +32,7 @@ const TodaysHadith = () => {
   }
 
   return (
-    <main className="">
+    <main className="px-4">
       <HadithHeader />
       <div className="flex justify-center">
         <div
