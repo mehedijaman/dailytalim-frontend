@@ -7,7 +7,6 @@ import useAllDate from '@/hooks/useAllDate';
 import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
-import { useEffect, useState } from 'react';
 import HadithLoader from '@/app/(main)/hadiths/loading';
 
 const {
@@ -58,9 +57,10 @@ const TodaysHadith = () => {
           </div>
           <div id="hadith" className="w-full">
             {/*Arabic Hadith */}
-            <div className="text-right">
+            <div className="">
               <p
-                className="mt-2 cursor-pointer text-2xl leading-relaxed"
+                dir="rtl"
+                className="font-scheherazade-new mt-2 cursor-pointer text-justify text-2xl leading-relaxed"
                 style={{ fontSize: `${arabicFontSize}px` }}
                 dangerouslySetInnerHTML={{
                   __html: todaysHadith?.todaysHadith?.ar,
@@ -70,7 +70,7 @@ const TodaysHadith = () => {
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
               <p
-                className="mt-2 cursor-pointer text-left text-lg leading-relaxed"
+                className="font-noto-serif-banglai mt-2 cursor-pointer text-justify text-lg leading-relaxed"
                 style={{ fontSize: `${banglaFontSize}px` }}
                 dangerouslySetInnerHTML={{
                   __html: todaysHadith?.todaysHadith?.bn,
