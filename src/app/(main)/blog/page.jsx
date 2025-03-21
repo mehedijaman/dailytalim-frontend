@@ -37,7 +37,7 @@ const BlogPage = () => {
 
       {/* Blog Categories & Search Navbar */}
       <div className="mb-10 flex items-center justify-between px-4 md:justify-center gap-4">
-        {/* Toggle Button for Categories (Left) */}
+        {/* Toggle Button for Categories (Mobile) */}
         <button
           className="md:hidden flex items-center text-xl p-2 rounded-md bg-[#0bad4c] text-white"
           onClick={() => setShowPopup(true)}
@@ -62,7 +62,18 @@ const BlogPage = () => {
           ))}
         </div>
 
-        {/* Search Button (Right) */}
+        {/* Search Bar (Desktop) */}
+        <div className="hidden md:flex items-center rounded-lg border  px-3 w-40">
+          <FaSearch size={20} />
+          <Input
+            placeholder="অনুসন্ধান করুন..."
+            className="w-full border-none bg-transparent placeholder-muted outline-none "
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+
+        {/* Search Button (Mobile) */}
         <button
           className="md:hidden flex items-center text-xl p-2 rounded-md bg-[#0bad4c] text-white"
           onClick={() => setShowPopup(true)}
@@ -74,7 +85,7 @@ const BlogPage = () => {
       {/* Popup Modal for Categories & Search (Mobile) */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="bg-green-100 w-4/5 md:w-1/3 p-6 rounded-lg shadow-lg relative">
+          <div className="bg-white w-4/5 md:w-1/3 p-6 rounded-lg shadow-lg relative">
             <button
               className="absolute top-2 right-2 text-xl text-gray-600 hover:text-black"
               onClick={() => setShowPopup(false)}
@@ -106,7 +117,7 @@ const BlogPage = () => {
                   }}
                   className={`px-4 py-1 text-sm font-semibold rounded-lg transition-all text-black ${
                     selectedCategory === category
-                      ? 'bg-[#0bad4c] text-black  shadow-md'
+                      ? 'bg-[#0bad4c] text-white shadow-md'
                       : 'hover:bg-[#0bad4c]/40'
                   }`}
                 >
