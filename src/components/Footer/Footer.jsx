@@ -22,17 +22,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/sitemap" className="">
-                  📍 সাইটম্যাপ
+                  📍 <span className='hover:underline'>সাইটম্যাপ</span>
                 </Link>
               </li>
               <li>
                 <Link href="/privacy-policy" className="">
-                  🔐 গোপনীয়তার নীতি
+                  🔐 <span className='hover:underline'>গোপনীয়তার নীতি</span>
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="">
-                  📜 শর্তাবলি
+                  📜 <span className='hover:underline'>শর্তাবলি</span>
                 </Link>
               </li>
             </ul>
