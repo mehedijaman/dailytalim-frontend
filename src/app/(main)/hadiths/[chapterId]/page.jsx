@@ -26,7 +26,7 @@ const HadithsPage = ({ params }) => {
   }
 
   return (
-    <div className="space-y-10 px-5">
+    <div className="space-y-10 px-9">
       {chapter?.hadiths?.length > 0 ? (
         chapter?.hadiths?.map(hadith => (
           <div key={hadith.id}>

@@ -11,7 +11,7 @@ const MainLayout = ({ children }) => {
 
   return (
     <main>
-      <header className="fixed z-40 h-16 w-full border-b border-border-color bg-background lg:z-50">
+      <header className="fixed z-40 h-16 w-full border-b border-border-color bg-background lg:z-50 ">
         <Navbar />
       </header>
       <section className="flex">
@@ -22,7 +22,7 @@ const MainLayout = ({ children }) => {
           className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding py-16 duration-300 md:pr-72`}
         >
           <div>
-            <div className="mx-auto mt-8 min-h-[calc(100vh-60px)] max-w-6xl px-4">
+            <div className="mx-auto mt-  min-h-[calc(100vh-60px)] max-w-6xl px-">
               {children}
             </div>
             <Footer />
