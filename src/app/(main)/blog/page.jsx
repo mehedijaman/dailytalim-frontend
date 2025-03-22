@@ -132,7 +132,7 @@ const BlogPage = () => {
       {/* Blog Grid */}
       <div className="px-4">
         {filteredBlogs.length > 0 ? (
-          <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {filteredBlogs.map(blog => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
@@ -142,6 +142,7 @@ const BlogPage = () => {
             কোন ব্লগ পাওয়া যায়নি
           </p>
         )}
+
       </div>
     </div>
   );
