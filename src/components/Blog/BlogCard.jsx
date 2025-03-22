@@ -16,7 +16,9 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
+
     <div className="mb-6 flex h-full flex-col rounded-lg bg-secondary-1 p-5">
+
       <div className="flex-grow">
         <p className="text-sm font-semibold text-primary-500">
           {blog.category}
