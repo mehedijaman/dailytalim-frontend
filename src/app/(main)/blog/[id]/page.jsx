@@ -27,7 +27,7 @@ const BlogDetails = () => {
     return <div className="text-center text-red-500">Blog not found</div>;
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 p-6 lg:p-4  mt-8">
       <Link href="/blog">
         <div className="fixed flex items-center">
           <p className="hover:cursor-pointer">
@@ -47,7 +47,9 @@ const BlogDetails = () => {
         <span className="hover:cursor-pointer">{blog.date}</span>
       </p>
       <hr className="my-10" />
+
       <div className="mx-auto text-justify font-noto-serif-banglai md:px-5">
+
         <p className="text-lg leading-relaxed">{blog.ShortHadith}</p>
         <p className="mt-6 text-lg">{blog.longHadith}</p>
       </div>
