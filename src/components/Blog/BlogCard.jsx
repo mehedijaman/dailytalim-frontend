@@ -13,7 +13,7 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div className="mb-6 flex h-full max-w-lg flex-col rounded-lg p-5 hover:bg-[#0bad4c]/5">
+    <div className="mb-6 flex h-full max-w-lg flex-col rounded-lg p-5 hover:bg-[#0bad4c]/10">
       <div className="flex-grow">
         <p className="text-sm font-semibold text-[#0bad4c]">{blog.category}</p>
         <h2 onClick={() => router.push(`/blog/${blog.id}`)} className="mt-2 text-xl font-bold leading-snug hover:text-[#0bad4c] hover:cursor-pointer">{blog.title}</h2>
