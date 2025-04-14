@@ -1,10 +1,13 @@
 'use client';
-import HadithHeader from '@/components/todaysHadith/HadithHeader';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import useFontResize from '@/hooks/useFontResize';
 import { useQuery } from '@tanstack/react-query';
 import React, { use } from 'react';
 import HadithLoader from '../loading';
+import HadithDownloadBtn from '@/components/HadithsButton/HadithDownloadBtn';
+import { IoBookOutline } from 'react-icons/io5';
+import { TbWorldWww } from 'react-icons/tb';
+import { FaFacebookF } from 'react-icons/fa';
 
 const HadithsPage = ({ params }) => {
   const { chapterId } = use(params);
@@ -26,27 +29,52 @@ const HadithsPage = ({ params }) => {
   }
 
   return (
-    <div className="space-y-10 px-9 py-6">
+    <div className="space-y-10 px-4 py-6">
       {chapter?.hadiths?.length > 0 ? (
         chapter?.hadiths?.map(hadith => (
           <div key={hadith.id}>
-            <div id="hadith" className="w-full border-b-2 pb-5">
-              {/*Arabic Hadith */}
-              <div className="">
-                <p
-                  dir="rtl"
-                  className="font-scheherazade-new mt-2 cursor-pointer text-justify text-2xl leading-relaxed"
-                  style={{ fontSize: `${arabicFontSize}px` }}
-                  dangerouslySetInnerHTML={{ __html: hadith?.ar }}
-                />
-              </div>
-              {/* Hadith Bangla Translation*/}
-              <div className="mt-5">
-                <p
-                  className="font-noto-serif-banglai mt-2 cursor-pointer text-justify text-lg leading-relaxed"
-                  style={{ fontSize: `${banglaFontSize}px` }}
-                  dangerouslySetInnerHTML={{ __html: hadith?.bn }}
-                />
+            <HadithDownloadBtn id={hadith.id} />
+            <div
+              id={`hadith-wrapper${hadith.id}`}
+              className="overflow-hidden rounded-xl bg-background p-2"
+            >
+              <div id={`hadith${hadith.id}`} className="w-full border-b-2 pb-5">
+                {/*Arabic Hadith */}
+                <div className="">
+                  <p
+                    dir="rtl"
+                    className="mt-2 cursor-pointer text-justify font-scheherazade-new text-2xl leading-relaxed"
+                    style={{ fontSize: `${arabicFontSize}px` }}
+                    dangerouslySetInnerHTML={{ __html: hadith?.ar }}
+                  />
+                </div>
+                {/* Hadith Bangla Translation*/}
+                <div className="mt-5">
+                  <p
+                    className="mt-2 cursor-pointer text-justify font-noto-serif-banglai text-lg leading-relaxed"
+                    style={{ fontSize: `${banglaFontSize}px` }}
+                    dangerouslySetInnerHTML={{ __html: hadith?.bn }}
+                  />
+                </div>
+                {/* Hidden footer: This is displayed on hadith photo card*/}
+                <footer id={`hadith-footer${hadith.id}`} className="hidden">
+                  <div className="mt-4 flex items-center gap-3 border-t border-primary-500 px-2 pb-1 pt-2 font-semibold text-primary-500">
+                    <p className="flex items-center gap-2">
+                      <IoBookOutline size={20} />
+                      DailyTalim
+                    </p>
+                    |
+                    <p className="flex items-center gap-2">
+                      <TbWorldWww size={20} />
+                      dailytalim.com{' '}
+                    </p>
+                    |
+                    <p className="flex items-center gap-2">
+                      <FaFacebookF />
+                      /DailyTalimBD{' '}
+                    </p>
+                  </div>
+                </footer>
               </div>
             </div>
           </div>
