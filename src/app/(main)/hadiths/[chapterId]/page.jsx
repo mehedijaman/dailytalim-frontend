@@ -8,6 +8,7 @@ import HadithDownloadBtn from '@/components/HadithsButton/HadithDownloadBtn';
 import { IoBookOutline } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
 import { FaFacebookF } from 'react-icons/fa';
+import HadithCopyBtn from '@/components/HadithsButton/HadithCopyBtn';
 
 const HadithsPage = ({ params }) => {
   const { chapterId } = use(params);
@@ -33,12 +34,15 @@ const HadithsPage = ({ params }) => {
       {chapter?.hadiths?.length > 0 ? (
         chapter?.hadiths?.map(hadith => (
           <div key={hadith.id}>
-            <HadithDownloadBtn id={hadith.id} />
+            <div className="mt-8 flex items-center justify-end gap-2 border-b-2 border-primary-500 px-2 pb-2">
+              <HadithDownloadBtn id={hadith.id} />
+              <HadithCopyBtn id={hadith.id} />
+            </div>
             <div
               id={`hadith-wrapper${hadith.id}`}
               className="overflow-hidden rounded-xl bg-background p-2"
             >
-              <div id={`hadith${hadith.id}`} className="w-full border-b-2 pb-5">
+              <div id={`hadith${hadith.id}`} className="w-full pb-5">
                 {/*Arabic Hadith */}
                 <div className="">
                   <p
