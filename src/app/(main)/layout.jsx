@@ -1,41 +1,40 @@
 'use client';
+import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/navbar/Navbar';
+import NavBarBottom from '@/components/navBarBottom/NavBarBottom';
 import RightSidebar from '@/components/rightSidebar/RightSidebar';
 import Sidebar from '@/components/sidebar/Sidebar';
-import { useState } from 'react';
+import useSidebarsContext from '@/hooks/useSidebarsContext';
 
 const MainLayout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
+  const { isSidebarOpen } = useSidebarsContext();
+
   return (
     <main>
-      <header className="fixed z-40 h-16 w-full border-b bg-white lg:z-50">
-        <Navbar
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-          isRightSidebarOpen={isRightSidebarOpen}
-          setIsRightSidebarOpen={setIsRightSidebarOpen}
-        />
+      <header className="fixed z-40 h-16 w-full border-b border-border-color bg-background lg:z-50 ">
+        <Navbar />
       </header>
-      <section className="flex gap-4">
+      <section className="flex">
         <aside className="z-50 lg:z-auto lg:pt-16">
-          <Sidebar
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsRightSidebarOpen}
-          />
+          <Sidebar />
         </aside>
         <div
-          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding pt-16 duration-300 md:pr-72`}
+          className={`flex-1 ${isSidebarOpen ? 'lg:pl-72' : 'pl-0'} transition-padding py-16 duration-300 md:pr-72`}
         >
-          <div className="mx-auto max-w-4xl">{children}</div>
+          <div>
+            <div className="mx-auto mt-  min-h-[calc(100vh-60px)] max-w-6xl px-">
+              {children}
+            </div>
+            <Footer />
+          </div>
         </div>
-        <aside className="md:pt-16">
-          <RightSidebar
-            isRightSidebarOpen={isRightSidebarOpen}
-            setIsRightSidebarOpen={setIsRightSidebarOpen}
-          />
+        <aside className="z-40 md:pt-16">
+          <RightSidebar />
         </aside>
       </section>
+      <nav className={''}>
+        <NavBarBottom />
+      </nav>
     </main>
   );
 };

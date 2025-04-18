@@ -10,3 +10,119 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.warm:root {
+  background: hsl(38, 71%, 92%);
+}
+.dark:root {
+  background: #0f161f;
+}
+
+:root {
+  --background: 0, 0%, 100%;
+  --primary-500: 144, 88%, 36%;
+  --primary-400: 144, 82%, 47%;
+  --primary-300: 144, 80%, 58%;
+  --primary-200: 144, 88%, 73%;
+  --primary-100: 143, 92%, 85%;
+  --secondary-3: 144, 82%, 47%;
+  --secondary-2: 143, 92%, 85%;
+  --secondary-1: 142, 100%, 93%;
+  --border: 220, 13%, 91%;
+  --text: 0, 0%, 1%;
+  --muted: 0, 0%, 45%;
+  --sidebar: 0, 0%, 96%;
+  --progress-start: hsl(144, 82%, 47%);
+  --progress-end: gray;
+}
+.dark {
+  --background: 214, 33%, 9%;
+  --primary-500: 144, 82%, 47%;
+  --primary-400: 144, 80%, 58%;
+  --primary-300: 144, 88%, 73%;
+  --primary-200: 143, 92%, 85%;
+  --primary-100: 142, 100%, 93%;
+  --secondary-3: 221, 23%, 16%;
+  --secondary-2: 216, 23%, 24%;
+  --secondary-1: 215, 25%, 27%;
+  --border: 215, 25%, 27%;
+  --text: 0, 0%, 100%;
+  --sidebar: 217, 32%, 14%;
+}
+
+.warm {
+  --background: 38, 71%, 92%;
+  --primary-500: 29, 68%, 53%;
+  --primary-400: 31, 69%, 61%;
+  --primary-300: 35, 70%, 72%;
+  --primary-200: 36, 70%, 83%;
+  --primary-100: 38, 71%, 92%;
+  --secondary-3: 28, 68%, 53%;
+  --secondary-2: 35, 70%, 83%;
+  --secondary-1: 36, 70%, 83%;
+  --border: 35, 70%, 83%;
+  --text: 0, 0%, 0%;
+  --muted: 0, 0%, 45%;
+  --sidebar: 37, 66%, 87%;
+  --progress-start: hsl(31, 69%, 61%);
+  --progress-end: gray;
+}
+
+/* Custom Scrollbar for root */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px 0px 0px 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+html.warm .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5b464;
+}
+html.warm .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #df9b40;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7ef7ae;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3eea82;
+}
+
+/* Custom Scrollbar for sidebars */
+.sidebar-custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px 0px 0px 10px;
+  transition: backgroud 0.3s ease-in-out;
+}
+
+html.warm .sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #e5b464;
+}
+
+html.warm .sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background: #df9b40;
+}
+
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #7ef7ae;
+}
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background: #3eea82;
+}
