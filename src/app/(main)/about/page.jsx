@@ -1,10 +1,14 @@
 const AboutPage = () => {
   return (
-    <div className="container mx-auto flex h-[calc(100vh-220px)] items-center justify-center">
-      <div className="  text-center">
-        <h1 className="text-3xl font-bold mb-2">দুঃখিত!</h1>
-        <h1 className="">এই পৃষ্ঠা বর্তমানে নির্মাণাধীন রয়েছে। ইনশাআল্লাহ, শীঘ্রই এই পৃষ্ঠা সম্পূর্ণ করা হবে। <br /> দয়া করে অপেক্ষা করুন এবং আল্লাহর রহমত কামনা করুন।</h1>
-      </div>
+    <div className="flex h-[calc(100vh-220px)] flex-col items-center justify-center">
+      <h4 className="text-xl font-bold"> দুঃখিত!</h4>
+      <p className="text-muted">
+        এই পৃষ্ঠা বর্তমানে নির্মাণাধীন রয়েছে। ইনশাআল্লাহ, শীঘ্রই এই পৃষ্ঠা
+        সম্পূর্ণ করা হবে।{' '}
+      </p>
+      <p className="text-muted">
+        দয়া করে অপেক্ষা করুন এবং আল্লাহর রহমত কামনা করুন।{' '}
+      </p>
     </div>
   );
 };

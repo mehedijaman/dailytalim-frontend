@@ -24,7 +24,7 @@ const Contact = () => {
     reset();
   };
   return (
-    <div className="rounded-2xl border-b-4 border-t-4 border-primary-500 pb-8 ">
+    <div className="rounded-2xl border-b-4 border-t-4 border-primary-500 pb-8">
       <div className="ml-2 mr-2 mt-8 lg:ml-4 lg:mr-4">
         <div className="ml-4 flex w-full flex-col gap-6 lg:ml-0">
           <div>

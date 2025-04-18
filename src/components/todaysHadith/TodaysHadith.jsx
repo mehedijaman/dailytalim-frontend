@@ -60,7 +60,7 @@ const TodaysHadith = () => {
             <div className="">
               <p
                 dir="rtl"
-                className="font-scheherazade-new mt-2 cursor-pointer text-justify text-2xl leading-relaxed"
+                className="mt-2 cursor-pointer text-justify font-scheherazade-new text-2xl leading-relaxed"
                 style={{ fontSize: `${arabicFontSize}px` }}
                 dangerouslySetInnerHTML={{
                   __html: todaysHadith?.todaysHadith?.ar,
@@ -70,7 +70,7 @@ const TodaysHadith = () => {
             {/* Hadith Bangla Translation*/}
             <div className="mt-5">
               <p
-                className="font-noto-serif-banglai mt-2 cursor-pointer text-justify text-lg leading-relaxed"
+                className="mt-2 cursor-pointer text-justify font-noto-serif-banglai text-lg leading-relaxed"
                 style={{ fontSize: `${banglaFontSize}px` }}
                 dangerouslySetInnerHTML={{
                   __html: todaysHadith?.todaysHadith?.bn,
