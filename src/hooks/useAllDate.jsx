@@ -1,6 +1,5 @@
-import React from 'react';
-import moment from 'moment-hijri';
 import Calendar from 'date-bengali-revised';
+import moment from 'moment-hijri';
 
 const useAllDate = () => {
   const convertToBanglaDigits = number => {
@@ -11,16 +10,16 @@ const useAllDate = () => {
   const hijriMonthsInBangla = {
     Muharram: 'মহররম',
     Safar: 'সফর',
-    'Rabi’al-awwal': 'রবিউল আউয়াল',
-    'Rabi’al-thani': 'রবিউস সানি',
-    'Jumada al-awwal': 'জুমাদাল উলা',
-    'Jumada al-thani': 'জুমাদাস সানি',
+    'Rabi\' al-Awwal': 'রবিউল আউয়াল',
+    'Rabi\' al-Thani': 'রবিউস সানি',
+    'Jumada al-Ula': 'জুমাদাল উলা',
+    'Jumada al-Alkhirah': 'জুমাদাস সানি',
     Rajab: 'রজব',
     'Sha’ban': 'শাবান',
     Ramadhan: 'রমজান',
     Shawwal: 'শাওয়াল',
-    'Dhu al-Qi’dah': 'জিলকদ',
-    'Dhu al-Hijjah': 'জিলহজ',
+    'Thul-Qi’dah': 'জিলকদ',
+    'Thul-Hijjah': 'জিলহজ',
   };
 
   const currentDate = moment().locale('en');
@@ -41,9 +40,9 @@ const useAllDate = () => {
   // Get Hijri date using moment-hijri
   const hijriDate = currentDate.subtract(1, 'day').format('iD iMMMM iYYYY');
   const [hijriDay, hijriMonth, hijriYear] = hijriDate.split(' ');
-
+  console.log(hijriMonth);
   // Format Hijri date in Bangla
-  const formattedHijriDateInBangla = `${hijriMonthsInBangla[hijriMonth]} ${convertToBanglaDigits(hijriDay)}, ${convertToBanglaDigits(hijriYear)} হিজরী`;
+  const formattedHijriDateInBangla = `${hijriMonthsInBangla[hijriMonth] ?? hijriMonth} ${convertToBanglaDigits(hijriDay)}, ${convertToBanglaDigits(hijriYear)} হিজরী`;
 
   const formattedKhristabdaDate = moment().locale('en').format('D MMM, YYYY');
 
