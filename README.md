@@ -1,49 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Daily Tailm
 
-## Getting Started
+<img width="1836" height="890" alt="image" src="https://github.com/user-attachments/assets/1c8d0fd3-a2d1-4cca-bc88-438fb0c85dc2" />
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Daily Tailm** is a modern knowledge-sharing platform designed to help busy individuals learn Islamic teachings in an easy and consistent way. The app delivers a **daily hadith**, provides subject-wise collections, and includes helpful features like prayer times and customizable reading themes.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates
-as you edit the file.
+## 🌐 Live Demo
+[Visit Daily Tailm](https://dailytalim.com/)
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+---
 
-## Learn More
+## 📖 Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Daily Hadith Display:** Randomly shows a new hadith each day, encouraging small, consistent learning habits.  
+- **Subject-wise Hadith Collection:** Browse hadiths by topics such as faith, manners, or worship for focused learning.  
+- **Multiple Reading Themes:** Choose between 3 different themes to make reading more comfortable and enjoyable.  
+- **Prayer Times:** Dynamically displays accurate prayer times based on the user's location.  
+- **Hadith Actions:** Easily copy, share, or download hadiths for personal use or sharing with others.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
+## 🛠️ Technologies Used
 
-## Deploy on Vercel
+- **Framework:** Next.js  
+- **Styling:** Tailwind CSS, Shadcn/ui  
+- **UI Components:** Tailwind + Radix/ui  
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+---
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+## 💻 Getting Started
+
+### Prerequisites
+- Node.js v18 or higher
+- npm 
+
+### Installation
+   ```bash
+   git clone https://github.com/mehedijaman/dailytalim-frontend.git
+   cd dailytalim-frontend
+   npm install
+   npm run dev
+   ```
